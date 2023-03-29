@@ -11,9 +11,10 @@ public class Pokemon {
 	private int defEsp;
 	private int velocidad;
 	private char sexo;
+	private int estamina;
 	
 	public Pokemon(int nivel, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
-			int velocidad, char sexo) {
+			int velocidad, char sexo, int estamina) {
 		super();
 		this.nivel = nivel;
 		this.nombre = nombre;
@@ -24,7 +25,8 @@ public class Pokemon {
 		this.atEsp = atEsp;
 		this.defEsp = defEsp;
 		this.velocidad = velocidad;
-		this.sexo=sexo;
+		this.sexo = sexo;
+		this.estamina = estamina;
 	}
 	
 	public Pokemon() {
@@ -39,6 +41,7 @@ public class Pokemon {
 		this.defEsp = 0;
 		this.velocidad = 0;
 		this.sexo='M';
+		this.estamina=0;
 	}
 	
 	public Pokemon(Pokemon c) {
@@ -52,6 +55,7 @@ public class Pokemon {
 		this.defEsp = c.defEsp;
 		this.velocidad = c.velocidad;
 		this.sexo=c.sexo;
+		this.estamina=c.estamina;
 	}
 	
 	

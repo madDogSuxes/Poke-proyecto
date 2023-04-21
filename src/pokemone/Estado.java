@@ -1,4 +1,4 @@
-package Movimiento;
+package pokemone;
 
 public class Estado extends Movimiento {
 
@@ -42,3 +42,4 @@ public class Estado extends Movimiento {
 	}
 	
 }
+

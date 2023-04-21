@@ -1,4 +1,4 @@
-package objeto;
+package pokemone;
 
 public class ObjetoParaComprarlo {
 	protected int idObjeto;
@@ -81,3 +81,4 @@ public class ObjetoParaComprarlo {
 	
 	
 }
+

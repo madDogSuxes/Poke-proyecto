@@ -1,4 +1,4 @@
-package combateTurno;
+package pokemone;
 
 public class Turnos extends Combate {
 

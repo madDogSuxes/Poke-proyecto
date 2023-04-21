@@ -1,4 +1,4 @@
-package Movimiento;
+package pokemone;
 
 public class Movimiento {
 

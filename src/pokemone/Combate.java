@@ -1,4 +1,4 @@
-package combateTurno;
+package pokemone;
 
 import java.util.LinkedList;
 

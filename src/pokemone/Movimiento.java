@@ -1,6 +1,6 @@
 package pokemone;
 
-public class Movimiento {
+public class Movimiento extends Pokemon{
 
 	protected int idMovimiento;
 	protected String nomMovimiento;

@@ -1,6 +1,6 @@
 package pokemone;
 
-public class ObjetoParaComprarlo {
+public class ObjetoParaComprarlo extends Tienda{
 	protected int idObjeto;
 	protected String nomObjeto;
 	protected double precio;

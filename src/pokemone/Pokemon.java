@@ -49,7 +49,7 @@ public class Pokemon {
 		this.defEsp = 0;
 		this.velocidad = 0;
 		this.sexo='M';
-		this.estamina=0;
+		this.estamina=100;
 		this.fertilidad=1;
 		this.tipo1.name();
 		this.tipo2.name();

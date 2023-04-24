@@ -2,7 +2,7 @@ package pokemone;
 
 import java.util.LinkedList;
 
-public class Combate {
+public class Combate extends Pokemon{
 	
 	LinkedList<String> turnos = new LinkedList<String>();
 	protected int idCombate;

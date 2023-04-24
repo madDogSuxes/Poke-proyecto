@@ -16,12 +16,9 @@ public class Pokemon {
 	private Tipo tipo1;
 	private Tipo tipo2;
 	private int experiencia;
-	private Objeto objeto;
-	
-	
 	
 	public Pokemon(int nivel, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
-			int velocidad, char sexo, int estamina, int fertilidad, Tipo tipo1, Tipo tipo2, int experiencia, Objeto objeto) {
+			int velocidad, char sexo, int estamina, int fertilidad, Tipo tipo1, Tipo tipo2, int experiencia) {
 		super();
 		this.nivel = nivel;
 		this.nombre = nombre;
@@ -38,7 +35,6 @@ public class Pokemon {
 		this.tipo1=tipo1;
 		this.tipo2=tipo2;
 		this.experiencia=experiencia;
-		this.objeto=objeto;
 	}
 	
 	public Pokemon() {
@@ -53,12 +49,11 @@ public class Pokemon {
 		this.defEsp = 0;
 		this.velocidad = 0;
 		this.sexo='M';
-		this.estamina=0;
+		this.estamina=100;
 		this.fertilidad=1;
 		this.tipo1.name();
 		this.tipo2.name();
 		this.experiencia=0;
-		this.objeto.getClass();
 	}
 	
 	public Pokemon(Pokemon c) {
@@ -77,7 +72,6 @@ public class Pokemon {
 		this.tipo1=c.tipo1;
 		this.tipo2=c.tipo2;
 		this.experiencia=c.experiencia;
-		this.objeto=c.objeto;
 	}
 
 	public int getNivel() {
@@ -198,14 +192,6 @@ public class Pokemon {
 
 	public void setExperiencia(int experiencia) {
 		this.experiencia = experiencia;
-	}
-
-	public Objeto getObjeto() {
-		return objeto;
-	}
-
-	public void setObjeto(Objeto objeto) {
-		this.objeto = objeto;
 	}
 	
 	public void subirNivel() {

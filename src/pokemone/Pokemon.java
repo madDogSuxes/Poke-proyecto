@@ -198,16 +198,27 @@ public class Pokemon {
 		if(10*nivel==experiencia){
 			nivel++;
 			int mejora=(int)Math.random()*5+1;
-			
 			int vitalMejor=vitalidad+mejora;
 			int ataqueM=ataque+mejora;
 			int defensaM=defensa+mejora;
 			int atEspM=atEsp+mejora;
 			int defEspM=defEsp+mejora;
 			int velocidadM=velocidad+mejora;
-			
-				
 		}
+	
+	}
+	
+	public static int aumentarEstadisticas1(int aumentoDeEstadisticas1) {
+		return aumentoDeEstadisticas1;
+	}
+	public static int aumentarEstadisticas2(int aumentoDeEstadisticas2) {
+		return aumentoDeEstadisticas2;
+	}
+	public static int aumentarEstadisticas3(int aumentoDeEstadisticas3) {
+		return aumentoDeEstadisticas3;
+	}
+	public static int aumentarEstadisticas4(int aumentoDeEstadisticas4) {
+		return aumentoDeEstadisticas4;
 	}
 	
 	

@@ -1,0 +1,51 @@
+Tenemos que hacer una limpieza de lo que son las bases de datos a la
+hora de hacer las foreign keys y todo el rollo, debido a que el codigo 
+escrito estaba sucio, quizás no sucio como tal pero si un poco desastre:
+cosas desordenadas, especulaciones a la hora de elegir bien los datos,
+sería viable comprobar que todo va a funcionar correctamente, incluso voy
+a intentar hacer lo que son las foreign keys por aquí, los inserts de pokedex
+ya están hechos, pero habrá que hacer una modificación para poder añadir sus 
+imágenes y sus audios, por desgracia el tema de las imágenes se van a 1804 
+imágenes, por lo que vamos a tener que ser conscientes de que el programa 
+va a llevar mucho cargamento encima, por no hablar de los audios que dudo 
+mucho de que en la API estén hechos.
+
+--esta debe ser la primera tabla antes que la de pokemon, el motivo?
+--pues porque es más fácil conectar desde directamente pokedex que hacerlo
+--hacia pokemon.
+CREATE TABLE pokedex (
+num_pokedex DECIMAL(5) PRIMARY KEY, #parecio al id de cada pokemon
+nombre_pokemon VARCHAR(20) PRIMARY KEY, #opcional la primary key de nombre.
+tipo1 VARCHAR(15),
+tipo2 VARCHAR(15),
+img VARCHAR(200),
+sonido VARCHAR(200)
+);
+
+CREATE TABLE pokemon (
+id_pokemon DECIMAL(5), PRIMARY KEY
+id_entrenador DECIMAL(5), FOREIGN KEY
+nombre_pokemon VARCHAR(20), FOREIGN KEY
+num_pokedex DECIMAL(3), FOREIGN KEY
+mote VARCHAR(30),
+sexo VARCHAR(1),
+nivel DECIMAL(3),
+vitalidad INTEGER(3),
+ataque INTEGER(3),
+defensa INTEGER(3),
+ata_especial INTEGER(3),
+def_especial INTEGER(3),
+velocidad INTEGER(3),
+estamina INTEGER(3),
+fertilidad INTEGER(1)
+);
+
+CREATE TABLE entrenador (
+id_entrenador DECIMAL(3)
+nombre VARCHAR(30),
+pokedollars INTEGER(11),
+lista_objetos VARCHAR(50),
+lista_equipo1 VARCHAR(6),
+lista_equipo2 VARCHAR(6),
+lista_caja VARCHAR(100),
+);

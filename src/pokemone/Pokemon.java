@@ -1,21 +1,21 @@
 package pokemone;
 
 public class Pokemon {
-	private int nivel;
-	private String nombre;
-	private String mote;
-	private int vitalidad;
-	private int ataque;
-	private int defensa;
-	private int atEsp;
-	private int defEsp;
-	private int velocidad;
-	private char sexo;
-	private int estamina;
-	private int fertilidad;
-	private Tipo tipo1;
-	private Tipo tipo2;
-	private int experiencia;
+	protected int nivel;
+	protected String nombre;
+	protected String mote;
+	protected int vitalidad;
+	protected int ataque;
+	protected int defensa;
+	protected int atEsp;
+	protected int defEsp;
+	protected int velocidad;
+	protected char sexo;
+	protected int estamina;
+	protected int fertilidad;
+	protected Tipo tipo1;
+	protected Tipo tipo2;
+	protected int experiencia;
 	
 	public Pokemon(int nivel, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
 			int velocidad, char sexo, int estamina, int fertilidad, Tipo tipo1, Tipo tipo2, int experiencia) {

@@ -8,6 +8,7 @@ public class Entrenador extends Pokemon{
 	protected int idEntrenador;
 	protected String nombre;
 	protected int pokeDollars;
+	protected int pokeBalls;
 	LinkedList<String> listaObjetos = new LinkedList<String>();
 	LinkedList<String> listaEquipo = new LinkedList<String>();
 	LinkedList<String> listaEquipo2 = new LinkedList<String>();
@@ -17,6 +18,7 @@ public class Entrenador extends Pokemon{
 		this.idEntrenador = 0;
 		this.nombre = "";
 		this.pokeDollars = 0;
+		this.pokeBalls = 0;
 		this.listaObjetos = new LinkedList<String>();
 		this.listaEquipo = new LinkedList<String>();
 		this.listaEquipo2 = new LinkedList<String>();
@@ -31,6 +33,7 @@ public class Entrenador extends Pokemon{
 		this.idEntrenador = 0001;
 		this.nombre = "";
 		this.pokeDollars = 0;
+		this.pokeBalls = 10;
 		this.listaObjetos = new LinkedList<String>();
 		this.listaEquipo = new LinkedList<String>();
 		this.listaEquipo2 = new LinkedList<String>();
@@ -71,6 +74,14 @@ public class Entrenador extends Pokemon{
 		this.pokeDollars = pokeDollars;
 	}
 
+	public int getPokeBalls() {
+		return pokeBalls;
+	}
+
+	public void setPokeBalls(int pokeBalls) {
+		this.pokeBalls = pokeBalls;
+	}
+
 	public LinkedList<String> getListaObjetos() {
 		return listaObjetos;
 	}
@@ -107,7 +118,7 @@ public class Entrenador extends Pokemon{
 	public String toString() {
 		return "Entrenador [idEntrenador=" + idEntrenador + ", nombre=" + nombre + ", pokeDollars=" + pokeDollars
 				+ ", listaObjetos=" + listaObjetos + ", listaEquipo=" + listaEquipo + ", listaEquipo2=" + listaEquipo2
-				+ ", listaCaja=" + listaCaja + "]";
+				+ ", listaCaja=" + listaCaja + ", pokeBalls= "+ pokeBalls + "]";
 	}
 	
 	public void moverACaja() {
@@ -157,7 +168,6 @@ public class Entrenador extends Pokemon{
 		byte opcion;
 		int pokeDollars = (int)Math.floor(Math.random()*1000+800);
 		int pokeDollarsG;
-		int aumentoDeEstadisticas;
 		System.out.println("¿Que tipo de entrenamiento quieres hacer?");
 		System.out.println("1. Entrenamiento pesado");
 		System.out.println("2. Entrenamiento furioso");
@@ -167,30 +177,56 @@ public class Entrenador extends Pokemon{
 		if(opcion == 1) {
 			pokeDollarsG = 20*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
-			aumentoDeEstadisticas = 5;
 			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
 			Pokemon.aumentarEstadisticas1(aumentarEstadisticas1(0));
 		}else if(opcion == 2) {
 			pokeDollarsG = 30*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
-			aumentoDeEstadisticas = 5;
 			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
 			Pokemon.aumentarEstadisticas2(aumentarEstadisticas2(0));
 		}else if(opcion == 3) {
 			pokeDollarsG = 40*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
-			aumentoDeEstadisticas = 5;
 			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
 			Pokemon.aumentarEstadisticas3(aumentarEstadisticas3(0));
 		}else if(opcion == 4) {
 			pokeDollarsG = 40*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
-			aumentoDeEstadisticas = 5;
 			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
 			Pokemon.aumentarEstadisticas4(aumentarEstadisticas4(0));
 		}else {
 			System.out.println("Le has dado al 5 tio.");
 		}
+	}
+	
+	public void combatir() {
+		//Está en la clase combate
+	}
+	
+	public void capturar() {
+		int probabilidadCaptura = (int)Math.floor(Math.random()*3+1);
+		boolean captura = false;
+		String moteNuevo;
+		boolean respuesta = false;
+		while(captura == false) {
+		if ((probabilidadCaptura == 1)||(probabilidadCaptura == 2)) {
+			captura = true;
+			System.out.println("Has capturado un pokemon, ¿quieres ponerle un mote?");
+			if(respuesta == true) {
+				moteNuevo = sc.nextLine();
+				setMote(moteNuevo);
+				setNivel(nivel);
+			}
+		}else {
+			captura = false;
+			System.out.println("No has capturado ningun pokemon, pierdes una pokeball");
+			pokeBalls -= 1;
+			}
+		}
+	}
+	
+	public void ponerACriar() {
+		//Basarse en los objetos una vez creado con todo el JAVAFX.
 	}
 }
 

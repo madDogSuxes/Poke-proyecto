@@ -25,7 +25,7 @@ public class Pokemon {
 		this.mote = mote;
 		this.vitalidad = vitalidad;
 		this.ataque = ataque;
-		this.defensa = defensa;
+		this.defensa = ataque;
 		this.atEsp = atEsp;
 		this.defEsp = defEsp;
 		this.velocidad = velocidad;
@@ -115,7 +115,7 @@ public class Pokemon {
 	}
 
 	public int getDefensa() {
-		return defensa;
+		return (int) defensa;
 	}
 
 	public void setDefensa(int defensa) {
@@ -200,7 +200,7 @@ public class Pokemon {
 			int mejora=(int)Math.random()*5+1;
 			int vitalMejor=vitalidad+mejora;
 			int ataqueM=ataque+mejora;
-			int defensaM=defensa+mejora;
+			int defensaM=ataque+mejora;
 			int atEspM=atEsp+mejora;
 			int defEspM=defEsp+mejora;
 			int velocidadM=velocidad+mejora;

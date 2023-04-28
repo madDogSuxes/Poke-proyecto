@@ -189,6 +189,17 @@ public class Estado extends Movimiento {
 			setAtaque(ataqueNuevo);
 		}
 	}
+	public void atrapado() {
+		boolean cambioDePokemon = false;
+		boolean huirDelCombate = false;
+		if(cambioDePokemon == true) {
+			System.out.println("Error en la aplicación, acción indebida.");
+		}
+		if(huirDelCombate == true) {
+			System.out.println("Error en la aplicación, acción indebida.");
+		}
+	}
+	
 	public void fatiga() {
 		problemasDeEstado = false;
 		estadosTemporales = true;
@@ -200,7 +211,7 @@ public class Estado extends Movimiento {
 		estadosTemporales = false;
 		otrosEstados = true;
 		int ceroDeVida = 0;
-		setVitalidad(ceroDeVida);
+		setVitalidad(ceroDeVida);	
 	}
 }
 

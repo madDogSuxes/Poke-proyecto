@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Combate extends Pokemon{
 	
-	LinkedList<String> turnos = new LinkedList<String>();
+	LinkedList<Turnos> turnos = new LinkedList<Turnos>();
 	protected int idCombate;
 	protected String ganador;
 	protected String jugador;
@@ -52,7 +52,7 @@ public class Combate extends Pokemon{
 	
 	public Combate(int nivel, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
 			int velocidad, char sexo, int estamina, int fertilidad, Tipo tipo1, Tipo tipo2, int experiencia,
-			LinkedList<String> turnos, int idCombate, String ganador, String jugador, String rival,
+			LinkedList<Turnos> turnos, int idCombate, String ganador, String jugador, String rival,
 			int numeroPokemonKORival, int numeroPokemonKOCoach, boolean retirarse) {
 		super(nivel, nombre, mote, vitalidad, ataque, defensa, atEsp, defEsp, velocidad, sexo, estamina, fertilidad,
 				tipo1, tipo2, experiencia);

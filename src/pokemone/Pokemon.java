@@ -236,352 +236,258 @@ public class Pokemon {
 		return aumentoDeEstadisticas4;
 	}
 
-	public void ventaja(Tipo tipo1, Tipo tipo2, Ataque ataque) {
+	public int ventaja(Tipo tipo1, Tipo tipo2, Ataque ataque) {
 
 		Tipo tipoRival = null;
 		int potencia = ataque.getPotencia();
+		
+		int ventaja=potencia*2;
 
 		if (tipo1 == Tipo.ACERO && tipoRival == Tipo.HADA) {
-
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			
+			return ventaja;
 
 		} else if (tipo1 == Tipo.ACERO && tipoRival == Tipo.HIELO) {
 
-			int potenciaAumen = potencia * 2;
+			return ventaja;
 
-			System.out.println("El ataque es super efectivo!");
 
 		} else if (tipo1 == Tipo.ACERO && tipoRival == Tipo.ROCA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 
 		if (tipo1 == Tipo.AGUA && tipoRival == Tipo.FUEGO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		} else if (tipo1 == Tipo.AGUA && tipoRival == Tipo.ROCA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		} else if (tipo1 == Tipo.AGUA && tipoRival == Tipo.TIERRA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 
 		if (tipo1 == Tipo.BICHO && tipoRival == Tipo.PLANTA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.BICHO && tipoRival == Tipo.PSIQUICO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.BICHO && tipoRival == Tipo.SINIESTRO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.DRAGON && tipoRival == Tipo.DRAGON) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.ELECTRICO && tipoRival == Tipo.AGUA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.ELECTRICO && tipoRival == Tipo.VOLADOR) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.FANTASMA && tipoRival == Tipo.FANTASMA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.FANTASMA && tipoRival == Tipo.PSIQUICO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.FUEGO && tipoRival == Tipo.ACERO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.FUEGO && tipoRival == Tipo.PLANTA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.FUEGO && tipoRival == Tipo.BICHO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.FUEGO && tipoRival == Tipo.HIELO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.HADA && tipoRival == Tipo.DRAGON) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.HADA && tipoRival == Tipo.LUCHA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.HADA && tipoRival == Tipo.SINIESTRO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.HIELO && tipoRival == Tipo.DRAGON) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.HIELO && tipoRival == Tipo.PLANTA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.HIELO && tipoRival == Tipo.TIERRA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.HIELO && tipoRival == Tipo.VOLADOR) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.LUCHA && tipoRival == Tipo.ROCA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.LUCHA && tipoRival == Tipo.HIELO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.LUCHA && tipoRival == Tipo.NORMAL) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.LUCHA && tipoRival == Tipo.ROCA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.LUCHA && tipoRival == Tipo.SINIESTRO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.PLANTA && tipoRival == Tipo.AGUA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.PLANTA && tipoRival == Tipo.ROCA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.PLANTA && tipoRival == Tipo.TIERRA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.PSIQUICO && tipoRival == Tipo.LUCHA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.PSIQUICO && tipoRival == Tipo.VENENO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.ROCA && tipoRival == Tipo.BICHO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.ROCA && tipoRival == Tipo.FUEGO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.ROCA && tipoRival == Tipo.HIELO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.ROCA && tipoRival == Tipo.VOLADOR) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.SINIESTRO && tipoRival == Tipo.FANTASMA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.SINIESTRO && tipoRival == Tipo.PSIQUICO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.TIERRA && tipoRival == Tipo.ACERO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.TIERRA && tipoRival == Tipo.ELECTRICO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.TIERRA && tipoRival == Tipo.FUEGO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.TIERRA && tipoRival == Tipo.ROCA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.TIERRA && tipoRival == Tipo.VENENO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.VENENO && tipoRival == Tipo.HADA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.TIERRA && tipoRival == Tipo.PLANTA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
 		
 		if (tipo1 == Tipo.VOLADOR && tipoRival == Tipo.BICHO) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.VOLADOR && tipoRival == Tipo.LUCHA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}else if (tipo1 == Tipo.VOLADOR && tipoRival == Tipo.PLANTA) {
 
-			int potenciaAumen = potencia * 2;
-
-			System.out.println("El ataque es super efectivo!");
+			return ventaja;
 
 		}
+		return ventaja;
 		
 
 	}
+	
+	
+	
+	
 
 }

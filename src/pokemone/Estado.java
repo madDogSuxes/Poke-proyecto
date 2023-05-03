@@ -192,6 +192,9 @@ public class Estado extends Movimiento {
 	public void atrapado() {
 		boolean cambioDePokemon = false;
 		boolean huirDelCombate = false;
+			problemasDeEstado = false;
+			estadosTemporales = true;
+			otrosEstados = false;
 		if(cambioDePokemon == true) {
 			System.out.println("Error en la aplicación, acción indebida.");
 		}

@@ -900,3 +900,10 @@ INSERT INTO pokemon VALUES (899, "Articuno de Galar", "Psíquico", "Volador", NU
 INSERT INTO pokemon VALUES (900, "Snom", "Hielo", "Bicho", NULL, NULL);
 INSERT INTO pokemon VALUES (901, "Frosmoth", "Hielo", "Bicho", NULL, NULL);
 INSERT INTO pokemon VALUES (902, "Stonjourner", "Roca", NULL, NULL, NULL);
+
+--Objetos
+INSERT INTO objeto VALUES (0001, "Pesa", 500, "Aumenta el ataque y la defensa un 20%, pero disminuye su velocidad un 20%");
+INSERT INTO objeto VALUES (0002, "Pluma", 450, "Aumenta la velocidad un 30%, pero disminuye la defensa y la defensa especial en un 20%.");
+INSERT INTO objeto VALUES (0003, "Chaleco", 510, "Aumenta la defensa y la defensa especial un 20%, pero disminuye la velocidad y el ataque un 15%.");
+INSERT INTO objeto VALUES (0004, "Bastón", 500, "Aumenta la estamina un 20%, pero disminuye en un 15% la velocidad.");
+INSERT INTO objeto VALUES (0005, "Pilas", 500, "Aumenta la recuperación de estamina en un 50%, pero disminuye la defensa especial un 30%.");

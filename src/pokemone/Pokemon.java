@@ -16,7 +16,7 @@ public class Pokemon {
 	protected Tipo tipo1;
 	protected Tipo tipo2;
 	protected int experiencia;
-	protected Estado estado;
+	protected static Estado estado;
 
 	public Pokemon(int nivel, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
 			int velocidad, char sexo, int estamina, int fertilidad, Tipo tipo1, Tipo tipo2, int experiencia,
@@ -40,7 +40,7 @@ public class Pokemon {
 		this.estado = estado;
 	}
 
-	public Estado getEstado() {
+	public static Estado getEstado() {
 		return estado;
 	}
 

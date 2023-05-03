@@ -55,7 +55,7 @@ public class Combate extends Pokemon{
 			LinkedList<Turnos> turnos, int idCombate, String ganador, String jugador, String rival,
 			int numeroPokemonKORival, int numeroPokemonKOCoach, boolean retirarse) {
 		super(nivel, nombre, mote, vitalidad, ataque, defensa, atEsp, defEsp, velocidad, sexo, estamina, fertilidad,
-				tipo1, tipo2, experiencia);
+				tipo1, tipo2, experiencia, getEstado());
 		this.turnos = turnos;
 		this.idCombate = idCombate;
 		this.ganador = ganador;

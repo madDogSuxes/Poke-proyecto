@@ -1,4 +1,4 @@
-package controller;
+package principales;
 
 import java.io.IOException;
 
@@ -11,14 +11,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
-public class Main extends Application {
-	@Override
+public class Main3 extends Application{
+	
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("../vistas/Inicio.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("../vistas/MenuDeInicio.fxml"));
 			Scene scene = new Scene(root);
-			primaryStage.setResizable(false);
-			primaryStage.setTitle("Pokemon.exe");
+			primaryStage.setTitle("Menu de inicio");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
@@ -29,5 +28,4 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
-
 }

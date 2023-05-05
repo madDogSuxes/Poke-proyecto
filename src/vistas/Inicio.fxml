@@ -17,7 +17,7 @@
       </ImageView>
       <TextField fx:id="textField1" layoutX="225.0" layoutY="153.0" promptText="Usuario" />
       <PasswordField fx:id="passwordField1" layoutX="225.0" layoutY="194.0" promptText="Contraseña" />
-      <Button fx:id="btnLogin" layoutX="309.0" layoutY="237.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="65.0" text="Login" />
+      <Button fx:id="btnLogin" layoutX="309.0" layoutY="237.0" mnemonicParsing="false" onAction="#loguearse" prefHeight="26.0" prefWidth="65.0" text="Login" />
       <ImageView fx:id="imagen2" fitHeight="102.0" fitWidth="392.0" layoutX="161.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Imagen/letrero-removebg-preview.png" />

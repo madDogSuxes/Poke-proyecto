@@ -20,7 +20,7 @@ public class VentanaDeRegistroController {
 	
 	@FXML
 	private TextField textField1;
-	@FXML
+	@FXML	
 	private PasswordField passwordField1;
 	@FXML
 	private Button btnRegistro;

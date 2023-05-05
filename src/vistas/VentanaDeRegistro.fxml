@@ -24,6 +24,6 @@
       </ImageView>
       <Button fx:id="btnRegistro" layoutX="255.0" layoutY="235.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" text="Registrarse" />
       <ToggleButton fx:id="toggle1" layoutX="384.0" layoutY="194.0" mnemonicParsing="false" onAction="#verContraseña" prefHeight="20.0" prefWidth="33.0" text="ver" />
-      <Button fx:id="btnLogin" layoutX="14.0" layoutY="292.0" mnemonicParsing="false" onAction="#volverAInicio" text="Login" />
+      <Button fx:id="btnLogin" layoutX="14.0" layoutY="292.0" mnemonicParsing="false" onAction="#volverAInicio" text="Volver" />
    </children>
 </AnchorPane>

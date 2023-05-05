@@ -2,6 +2,9 @@ package pokemone;
 
 public class Pokemon {
 	protected int nivel;
+	protected int idEntrenador;
+	protected int idPokemon;
+	protected int numPokedex;
 	protected String nombre;
 	protected String mote;
 	protected int vitalidad;
@@ -18,10 +21,13 @@ public class Pokemon {
 	protected int experiencia;
 	protected static Estado estado;
 
-	public Pokemon(int nivel, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
+	public Pokemon(int nivel, int idEntrenador, int idPokemon, int numPokedex, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
 			int velocidad, char sexo, int estamina, int fertilidad, Tipo tipo1, Tipo tipo2, int experiencia,
 			Estado estado) {
 		super();
+		this.idEntrenador = idEntrenador;
+		this.idPokemon = idPokemon;
+		this.numPokedex = numPokedex;
 		this.nivel = nivel;
 		this.nombre = nombre;
 		this.mote = mote;
@@ -50,7 +56,10 @@ public class Pokemon {
 
 	public Pokemon() {
 		super();
+		this.idEntrenador = 0;
+		this.idPokemon = 0;
 		this.nivel = 1;
+		this.numPokedex = 0;
 		this.nombre = "";
 		this.mote = "";
 		this.vitalidad = 15;
@@ -69,7 +78,10 @@ public class Pokemon {
 	}
 
 	public Pokemon(Pokemon c) {
+		this.idEntrenador = c.idEntrenador;
+		this.idPokemon = c.idPokemon;
 		this.nivel = c.nivel;
+		this.numPokedex = c.numPokedex;
 		this.nombre = c.nombre;
 		this.mote = c.mote;
 		this.vitalidad = c.vitalidad;
@@ -94,6 +106,30 @@ public class Pokemon {
 		this.nivel = nivel;
 	}
 
+	public int getIdEntrenador(int idEntrenador) {
+		return idEntrenador;
+	}
+	
+	public void setIdEntrenador() {
+		this.idEntrenador = idEntrenador;
+	}
+	
+	public int getIdPokemon(int idPokemon) {
+		return idPokemon;
+	}
+	
+	public int setIdPokemon() {
+		return idPokemon = idPokemon;
+	}
+	
+	public int numPokedex() {
+		return numPokedex;
+	}
+	
+	public void setNumPokedex(int numPokedex) {
+		this.numPokedex = numPokedex;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}

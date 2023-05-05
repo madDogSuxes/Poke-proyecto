@@ -68,5 +68,25 @@ public class InicioController implements Initializable{
 	public void verContraseña(ActionEvent event) {
 		//Recuerda hacerlo
 	}
+	
+	public void loguearse() {
+		try {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/MenuDeInicio.fxml"));
+			
+			Parent root = loader.load();
+				
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();
+			Stage stage2 = (Stage)this.btnRegistro.getScene().getWindow();
+			stage.setResizable(false);
+			stage.setTitle("Menu de inicio");
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(scene);
+			stage2.close();
+			stage.showAndWait();
+		}catch(IOException e) {
+				e.printStackTrace();
+		}
+	}
 
 }

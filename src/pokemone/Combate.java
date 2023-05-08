@@ -20,16 +20,18 @@ public class Combate extends Pokemon {
 		this.rival = "";
 		this.numeroPokemonKOCoach = 0;
 		this.numeroPokemonKORival = 0;
+		this.retirarse = false;
 	}
 
 	public Combate(int idCombate, String ganador, String jugador, String rival, int numeroPokemonKORival,
-			int numeroPokemonKOCoach) {
+			int numeroPokemonKOCoach, boolean retirarse) {
 		this.idCombate = 0;
 		this.ganador = "";
 		this.jugador = "";
 		this.rival = "";
 		this.numeroPokemonKOCoach = 0;
 		this.numeroPokemonKORival = 0;
+		this.retirarse = false;
 	}
 
 	public Combate(Pokemon c) {
@@ -43,6 +45,7 @@ public class Combate extends Pokemon {
 		this.rival = c.rival;
 		this.numeroPokemonKOCoach = c.numeroPokemonKOCoach;
 		this.numeroPokemonKORival = c.numeroPokemonKORival;
+		this.retirarse = c.retirarse;
 	}
 
 	public Combate(int nivel, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
@@ -65,14 +68,17 @@ public class Combate extends Pokemon {
 		String jugador1 = "";
 		String jugador2 = "";
 		int vidaRecibida = 0;
-		int vidaDada = 0;
+		int vidaQuitada = 0;
 		if (vidaRecibida < 0) {
+			System.out.println("Error en el programa.");
+		}else if (vidaQuitada < 0) {
 			System.out.println("Error en el programa.");
 		}
 
 		if (numeroPokemonKOCoach == 6) {
 			System.out.println(jugador1 + " se ha quedado fuera de combate");
-
+			System.out.println(jugador2 + "ha ganado el combate");
+			
 			// x/3*1
 
 			// pokeDollarsPerdido=
@@ -82,6 +88,7 @@ public class Combate extends Pokemon {
 			int nivelpokemonrival = getNivel();
 
 			int experienciaCombate = (nivel_pokemon + nivelpokemonrival) * 10 / 4;
+			
 		}
 	}
 

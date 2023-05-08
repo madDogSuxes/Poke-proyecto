@@ -12,13 +12,14 @@
             <Image url="@../../Imagen/MenuFondo1.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnEquipo" layoutX="96.0" layoutY="29.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Equipo" />
-      <Button fx:id="btnCaja" layoutX="397.0" layoutY="29.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Caja" />
-      <Button fx:id="btnCaptura" layoutX="96.0" layoutY="108.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Captura" />
-      <Button fx:id="btnCombate" layoutX="397.0" layoutY="108.0" mnemonicParsing="false" onAction="#combatir" prefHeight="26.0" prefWidth="70.0" text="Combate" />
-      <Button fx:id="btnCriar" layoutX="95.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Criar" />
-      <Button fx:id="btnTienda" layoutX="398.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Tienda" />
-      <Button fx:id="btnEntrenar" layoutX="97.0" layoutY="269.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Entrenar" />
-      <Button fx:id="btnPokedex" layoutX="399.0" layoutY="269.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Pokedex" />
+      <Button fx:id="btnEquipo" layoutX="115.0" layoutY="29.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Equipo" />
+      <Button fx:id="btnCaja" layoutX="407.0" layoutY="29.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Caja" />
+      <Button fx:id="btnCaptura" layoutX="115.0" layoutY="108.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Captura" />
+      <Button fx:id="btnCombate" layoutX="407.0" layoutY="108.0" mnemonicParsing="false" onAction="#combatir" prefHeight="26.0" prefWidth="70.0" text="Combate" />
+      <Button fx:id="btnCriar" layoutX="115.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Criar" />
+      <Button fx:id="btnTienda" layoutX="407.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Tienda" />
+      <Button fx:id="btnEntrenar" layoutX="115.0" layoutY="269.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Entrenar" />
+      <Button fx:id="btnPokedex" layoutX="407.0" layoutY="269.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Pokedex" />
+      <Button fx:id="btnSalir" layoutX="14.0" layoutY="270.0" mnemonicParsing="false" onAction="#volverAlLogin" text="Salir" />
    </children>
 </AnchorPane>

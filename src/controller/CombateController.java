@@ -15,11 +15,6 @@ import javafx.event.ActionEvent;
 public class CombateController {
 	@FXML
 	private Button btnVolver;
-
-	
-	@FXML
-	
-	
 	
 	public void volverAlMenu(ActionEvent event) {
 		try {

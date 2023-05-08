@@ -1,5 +1,7 @@
 package pokemone;
 
+import java.util.LinkedList;
+
 public class Pokemon {
 	protected int nivel;
 	protected int idEntrenador;
@@ -20,6 +22,8 @@ public class Pokemon {
 	protected Tipo tipo2;
 	protected int experiencia;
 	protected static Estado estado;
+	protected int equipo;
+	protected LinkedList<Movimiento> listaMov;
 
 	public Pokemon(int nivel, int idEntrenador, int idPokemon, int numPokedex, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
 			int velocidad, char sexo, int estamina, int fertilidad, Tipo tipo1, Tipo tipo2, int experiencia,
@@ -118,7 +122,7 @@ public class Pokemon {
 		return idPokemon;
 	}
 	
-	public int setIdPokemon() {
+	public int setIdPokemon(int idPokemon) {
 		return idPokemon = idPokemon;
 	}
 	

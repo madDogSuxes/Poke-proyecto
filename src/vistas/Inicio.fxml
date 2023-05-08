@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InicioController">
    <children>
@@ -23,7 +24,8 @@
             <Image url="@../../Imagen/letrero-removebg-preview.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnRegistro" layoutX="225.0" layoutY="237.0" mnemonicParsing="false" onAction="#registrarte" prefHeight="26.0" prefWidth="65.0" text="Registro" />
+      <Button fx:id="btnRegistro" layoutX="225.0" layoutY="237.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="26.0" prefWidth="65.0" text="Registro" />
       <ToggleButton fx:id="toggle1" layoutX="386.0" layoutY="194.0" mnemonicParsing="false" onAction="#verContraseña" prefHeight="20.0" prefWidth="33.0" text="ver" />
+      <Text fx:id="txtError" fill="#ff2222" layoutX="161.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="***usuario o contraseña incompletos/incorrectos***" wrappingWidth="276.0902404785156" />
    </children>
 </AnchorPane>

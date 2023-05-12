@@ -41,6 +41,7 @@ public class MenuDeInicioController {
 	public void combatir(ActionEvent event) {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Combate.fxml")));
+			System.out.println("Bienvenido a combate.");
 	        scene = new Scene(root, 600, 331);
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	        stage.setTitle("MenuDeInicio");
@@ -54,6 +55,7 @@ public class MenuDeInicioController {
 	public void capturar(ActionEvent event) throws IOException{
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Captura.fxml")));
+			System.out.println("Bienvenido a capturar Pokemon.");
 	        scene = new Scene(root, 600, 331);
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	        stage.setTitle("Captura");
@@ -63,11 +65,26 @@ public class MenuDeInicioController {
 			e.printStackTrace();
 		}
 	}
+	
+	public void cajear(ActionEvent event) throws IOException{
+		try {
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Caja.fxml")));
+			System.out.println("Bienvenido a tu caja Pokemon.");
+	        scene = new Scene(root, 600, 331);
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        stage.setTitle("Captura");
+	        stage.setScene(scene);
+	        stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	} 
 
 	@FXML
 	public void volverAlLogin(ActionEvent event) throws IOException{
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Inicio.fxml")));
+			System.out.println("Retrocediendo al Log-in.");
 	        scene = new Scene(root, 600, 331);
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	        stage.setTitle("Pokemon.exe");

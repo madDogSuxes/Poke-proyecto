@@ -41,12 +41,13 @@ public class VentanaDeRegistroController {
 	private ToggleButton toggle1;
 	@FXML
 	private Button btnLogin;
-	
+
 	private Stage stage;
 	private Parent root;
 	private Scene scene;
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
+
 	}
 
 	public void verContraseña() {
@@ -62,11 +63,11 @@ public class VentanaDeRegistroController {
 
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/MenuDeInicio.fxml")));
-	        scene = new Scene(root, 600, 331);
-	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-	        stage.setTitle("MenuDeInicio");
-	        stage.setScene(scene);
-	        stage.show();
+			scene = new Scene(root, 600, 331);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setTitle("MenuDeInicio");
+			stage.setScene(scene);
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -75,11 +76,11 @@ public class VentanaDeRegistroController {
 	public void volverAInicio(Event event) throws IOException {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Inicio.fxml")));
-	        scene = new Scene(root, 600, 331);
-	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-	        stage.setTitle("Pokemon.exe");
-	        stage.setScene(scene);
-	        stage.show();
+			scene = new Scene(root, 600, 331);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setTitle("Pokemon.exe");
+			stage.setScene(scene);
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -206,8 +206,8 @@ public class Pokemon {
 		this.velocidad = velocidad;
 	}
 
-	public char getSexo() {
-		return sexo;
+	public String getSexo() {
+		return "";
 	}
 
 	public void setSexo(char sexo) {

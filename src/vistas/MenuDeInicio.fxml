@@ -13,7 +13,7 @@
          </image>
       </ImageView>
       <Button fx:id="btnEquipo" layoutX="115.0" layoutY="29.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Equipo" />
-      <Button fx:id="btnCaja" layoutX="407.0" layoutY="29.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Caja" />
+      <Button fx:id="btnCaja" layoutX="407.0" layoutY="29.0" mnemonicParsing="false" onAction="#cajear" prefHeight="26.0" prefWidth="70.0" text="Caja" />
       <Button fx:id="btnCaptura" layoutX="115.0" layoutY="108.0" mnemonicParsing="false" onAction="#capturar" prefHeight="26.0" prefWidth="70.0" text="Captura" />
       <Button fx:id="btnCombate" layoutX="407.0" layoutY="108.0" mnemonicParsing="false" onAction="#combatir" prefHeight="26.0" prefWidth="70.0" text="Combate" />
       <Button fx:id="btnCriar" layoutX="115.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Criar" />

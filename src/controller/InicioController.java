@@ -3,6 +3,7 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,11 +12,14 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.EventObject;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
-import crud.UsuarioCrud;
+import crud.EntrenadorCrud;
 import javafx.event.ActionEvent;
-
+import javafx.event.Event;
 import javafx.scene.control.ToggleButton;
 
 import javafx.scene.image.ImageView;
@@ -43,6 +47,10 @@ public class InicioController implements Initializable {
 	@FXML
 	public Text txtError;
 
+	private Stage stage;
+	private Scene scene;
+	private Parent root;
+
 	public Text getTxtError() {
 		return txtError;
 	}
@@ -59,19 +67,12 @@ public class InicioController implements Initializable {
 	@FXML
 	public void registrarse(ActionEvent event) {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/VentanaDeRegistro.fxml"));
-
-			Parent root = loader.load();
-
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			Stage stage2 = (Stage) this.btnRegistro.getScene().getWindow();
-			stage.setResizable(false);
-			stage.setTitle("Ventaja de registro");
-			stage.initModality(Modality.APPLICATION_MODAL);
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/VentanaDeRegistro.fxml")));
+			scene = new Scene(root, 600, 331);
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setTitle("Ventana de registro");
 			stage.setScene(scene);
-			stage2.close();
-			stage.showAndWait();
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -82,35 +83,29 @@ public class InicioController implements Initializable {
 		// Recuerda hacerlo
 	}
 
-	public void loguearse() {
+	@FXML
+	public void loguearse(Event event) throws IOException {
 
 		if ((textField1.getText().length() != 0) && (passwordField1.getText().length() != 0)) {
 			txtError.setVisible(false);
 
-			UsuarioCrud.comprobarDatos(textField1.getText(), passwordField1.getText());
-			
-			if (UsuarioCrud.obtenerCambioDeVentana() == true) {
+			EntrenadorCrud.comprobarDatos(textField1.getText(), passwordField1.getText());
+
+			if (EntrenadorCrud.obtenerCambioDeVentana() == true) {
 				try {
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/MenuDeInicio.fxml"));
-
-					Parent root = loader.load();
-
-					Scene scene = new Scene(root);
-					Stage stage = new Stage();
-					Stage stage2 = (Stage) this.btnRegistro.getScene().getWindow();
-					stage.setResizable(false);
+					root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/MenuDeInicio.fxml")));
+					scene = new Scene(root, 600, 331);
+					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 					stage.setTitle("Menu de inicio");
-					stage.initModality(Modality.APPLICATION_MODAL);
 					stage.setScene(scene);
-					stage2.close();
-					stage.showAndWait();
+					stage.show();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			}else if (UsuarioCrud.obtenerCambioDeVentana() == false) {
+			} else if (EntrenadorCrud.obtenerCambioDeVentana() == false) {
 				txtError.setVisible(true);
 			}
-		} else{
+		} else {
 			txtError.setVisible(true);
 		}
 	}

@@ -7,6 +7,8 @@ public class Pokemon {
 	protected int idEntrenador;
 	protected int idPokemon;
 	protected int numPokedex;
+	protected String imgDeFrente;
+	protected String imgDeEspaldas;
 	protected String nombre;
 	protected String mote;
 	protected int vitalidad;
@@ -27,7 +29,7 @@ public class Pokemon {
 
 	public Pokemon(int nivel, int idEntrenador, int idPokemon, int numPokedex, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
 			int velocidad, char sexo, int estamina, int fertilidad, Tipo tipo1, Tipo tipo2, int experiencia,
-			Estado estado) {
+			Estado estado, String imgDeFrente, String imgDeEspaldas) {
 		super();
 		this.idEntrenador = idEntrenador;
 		this.idPokemon = idPokemon;
@@ -48,6 +50,8 @@ public class Pokemon {
 		this.tipo2 = tipo2;
 		this.experiencia = experiencia;
 		this.estado = estado;
+		this.imgDeEspaldas = imgDeEspaldas;
+		this.imgDeFrente = imgDeFrente;
 	}
 
 	public static Estado getEstado() {
@@ -79,6 +83,8 @@ public class Pokemon {
 		this.tipo2 = null;
 		this.experiencia = 0;
 		this.estado = null;
+		this.imgDeEspaldas = "";
+		this.imgDeFrente = "";
 	}
 
 	public Pokemon(Pokemon c) {
@@ -100,6 +106,8 @@ public class Pokemon {
 		this.tipo1 = c.tipo1;
 		this.tipo2 = c.tipo2;
 		this.experiencia = c.experiencia;
+		this.imgDeEspaldas = c.imgDeEspaldas;
+		this.imgDeFrente = c.imgDeFrente;
 	}
 
 	public int getNivel() {
@@ -141,13 +149,13 @@ public class Pokemon {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+	
 	public String getMote() {
 		return mote;
 	}
 
-	public void setMote(String mote) {
-		this.mote = mote;
+	public static String setMote(String mote) {
+		return mote;
 	}
 
 	public int getVitalidad() {
@@ -246,6 +254,22 @@ public class Pokemon {
 		this.experiencia = experiencia;
 	}
 
+	public String getImgDeFrente() {
+		return imgDeFrente;
+	}
+
+	public void setImgDeFrente(String imgDeFrente) {
+		this.imgDeFrente = imgDeFrente;
+	}
+
+	public String getImgDeEspaldas() {
+		return imgDeEspaldas;
+	}
+
+	public void setImgDeEspaldas(String imgDeEspaldas) {
+		this.imgDeEspaldas = imgDeEspaldas;
+	}
+
 	public void subirNivel() {
 		if (10 * nivel == experiencia) {
 			nivel++;
@@ -258,6 +282,14 @@ public class Pokemon {
 			int velocidadM = velocidad + mejora;
 		}
 
+	}
+	
+	public static void ponerMote() {
+		String mote;
+	}
+	
+	public static void noP0nerMote(String nombre) {
+		setMote(nombre);
 	}
 
 	public static int aumentarEstadisticas1(int aumentoDeEstadisticas1) {

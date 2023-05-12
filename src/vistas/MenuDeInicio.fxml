@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="588.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuDeInicioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuDeInicioController">
    <children>
       <ImageView fitHeight="331.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -14,7 +14,7 @@
       </ImageView>
       <Button fx:id="btnEquipo" layoutX="115.0" layoutY="29.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Equipo" />
       <Button fx:id="btnCaja" layoutX="407.0" layoutY="29.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Caja" />
-      <Button fx:id="btnCaptura" layoutX="115.0" layoutY="108.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Captura" />
+      <Button fx:id="btnCaptura" layoutX="115.0" layoutY="108.0" mnemonicParsing="false" onAction="#capturar" prefHeight="26.0" prefWidth="70.0" text="Captura" />
       <Button fx:id="btnCombate" layoutX="407.0" layoutY="108.0" mnemonicParsing="false" onAction="#combatir" prefHeight="26.0" prefWidth="70.0" text="Combate" />
       <Button fx:id="btnCriar" layoutX="115.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Criar" />
       <Button fx:id="btnTienda" layoutX="407.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Tienda" />

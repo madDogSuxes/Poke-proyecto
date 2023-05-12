@@ -6,11 +6,14 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
-import crud.UsuarioCrud;
+import crud.EntrenadorCrud;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -38,6 +41,10 @@ public class VentanaDeRegistroController {
 	private ToggleButton toggle1;
 	@FXML
 	private Button btnLogin;
+	
+	private Stage stage;
+	private Parent root;
+	private Scene scene;
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	}
@@ -46,44 +53,33 @@ public class VentanaDeRegistroController {
 		// Recuerda hacerlo
 	}
 
-	public void registrarse() {
+	public void registrarse(Event event) throws IOException {
 
-		UsuarioCrud.insertarDatos(textField1.getText(), passwordField1.getText());
+		int pokeDollar;
+		EntrenadorCrud.insertarDatos(textField1.getText(), passwordField1.getText(),
+				pokeDollar = (int) (Math.random() * 201) + 800);
+		System.out.println("PokeDollars asignados: " + pokeDollar);
 
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/MenuDeInicio.fxml"));
-
-			Parent root = loader.load();
-
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			Stage stage2 = (Stage) this.btnRegistro.getScene().getWindow();
-			stage.setResizable(false);
-			stage.setTitle("Menu de inicio");
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setScene(scene);
-			stage2.close();
-			stage.showAndWait();
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/MenuDeInicio.fxml")));
+	        scene = new Scene(root, 600, 331);
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        stage.setTitle("MenuDeInicio");
+	        stage.setScene(scene);
+	        stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void volverAInicio() {
+	public void volverAInicio(Event event) throws IOException {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/Inicio.fxml"));
-
-			Parent root = loader.load();
-
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			Stage stage2 = (Stage) this.btnLogin.getScene().getWindow();
-			stage.setResizable(false);
-			stage.setTitle("Pokemon.exe");
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setScene(scene);
-			stage2.close();
-			stage.showAndWait();
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Inicio.fxml")));
+	        scene = new Scene(root, 600, 331);
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        stage.setTitle("Pokemon.exe");
+	        stage.setScene(scene);
+	        stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

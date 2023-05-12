@@ -2,6 +2,7 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -9,6 +10,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import javafx.event.ActionEvent;
 
@@ -16,21 +18,18 @@ public class CombateController {
 	@FXML
 	private Button btnVolver;
 	
-	public void volverAlMenu(ActionEvent event) {
+	private Stage stage;
+	private Scene scene;
+	private Parent root;
+	
+	public void volverAlMenu(ActionEvent event) throws IOException{
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/MenuDeInicio.fxml"));
-			
-				Parent root = loader.load();
-				
-				Scene scene = new Scene(root);
-				Stage stage = new Stage();
-				Stage stage2 = (Stage)this.btnVolver.getScene().getWindow();
-				stage.setResizable(false);
-				stage.setTitle("Menu de inicio");
-				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.setScene(scene);
-				stage2.close();
-				stage.showAndWait();
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/MenuDeInicio.fxml")));
+	        scene = new Scene(root, 600, 331);
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        stage.setTitle("Menu de inicio");
+	        stage.setScene(scene);
+	        stage.show();
 			}catch(IOException e) {
 				e.printStackTrace();
 			}

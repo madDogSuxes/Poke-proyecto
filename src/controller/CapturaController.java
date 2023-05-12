@@ -42,7 +42,11 @@ public class CapturaController {
 	@FXML
 	private Button btnNo;
 	@FXML
+	private Button btnAceptarMote;
+	@FXML
 	private ImageView imgPokemonEncontrado;
+	@FXML
+	private ImageView imgPokeball;
 
 	private Stage stage;
 	private Scene scene;
@@ -53,8 +57,10 @@ public class CapturaController {
 	int pokeBall;
 
 	public void initialize() {
+		imgPokeball.setVisible(false);
 		btnSi.setVisible(false);
 		btnNo.setVisible(false);
+		btnAceptarMote.setVisible(false);
 		txtMote.setVisible(false);
 		txtMote2.setVisible(false);
 		txtMote3.setVisible(false);
@@ -63,6 +69,8 @@ public class CapturaController {
 	@FXML
 	public void capturarPokemon(ActionEvent event) {
 
+		Pokemon p = CapturaCrud.capturarPokemon();
+		
 		String mote = null;
 
 		int probabilidadDeCaptura = (int) (Math.random() * 3) + 1;
@@ -72,20 +80,19 @@ public class CapturaController {
 			imgPokemonEncontrado.setVisible(false);
 			System.out.println("Has capturado un pokemon.");
 			pokeBall--;
+			imgPokeball.setVisible(true);
+			btnAceptarMote.setVisible(false);
 			btnSi.setVisible(true);
 			btnNo.setVisible(true);
 			txtMote.setVisible(true);
+			txtMote2.setVisible(false);
+			txtMote3.setVisible(true);
 
-			if (capturaRealizada == true) {
-				txtMote2.setVisible(false);
-				btnNo.setVisible(true);
-				btnSi.setVisible(true);
-				txtMote.setVisible(true);
-				txtMote2.setVisible(false);
-				txtMote3.setVisible(true);
-				guardarMote(event);
-			} else {
-				noPonerMote(event);
+			if (btnSi != null) {
+				txtMote2.setVisible(true);
+				btnAceptarMote.setVisible(true);
+			} else if (btnNo != null) {
+			
 			}
 		} else {
 			System.out.println("No has capturado ningún pokemon. ¡Sigue buscando!");
@@ -100,6 +107,8 @@ public class CapturaController {
 	@FXML
 	public void buscarPokemon(ActionEvent event) {
 
+		boolean buscarPokemon = true;
+
 		Pokemon p = CapturaCrud.buscarPokemon();
 
 		File file = new File(p.getImgDeFrente());
@@ -107,6 +116,15 @@ public class CapturaController {
 		Image image = new Image(file.toURI().toString());
 
 		imgPokemonEncontrado.setImage(image);
+		imgPokemonEncontrado.setVisible(true);
+		imgPokeball.setVisible(false);
+		btnSi.setVisible(false);
+		btnNo.setVisible(false);
+		btnAceptarMote.setVisible(false);
+		txtMote.setVisible(false);
+		txtMote2.setVisible(false);
+		txtMote3.setVisible(false);
+
 	}
 
 	public void volverAMenu(Event event) throws IOException {
@@ -124,11 +142,13 @@ public class CapturaController {
 
 	public void siPonerMote(Event event) {
 		txtMote2.setVisible(true);
+		btnAceptarMote.setVisible(true);
 		Pokemon.ponerMote();
 	}
 
 	public void noPonerMote(Event event) {
 		txtMote2.setVisible(false);
+		btnAceptarMote.setVisible(false);
 		Pokemon.noP0nerMote(null);
 	}
 

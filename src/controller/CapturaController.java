@@ -69,10 +69,6 @@ public class CapturaController {
 	@FXML
 	public void capturarPokemon(ActionEvent event) {
 
-		Pokemon p = CapturaCrud.capturarPokemon();
-		
-		String mote = null;
-
 		int probabilidadDeCaptura = (int) (Math.random() * 3) + 1;
 
 		if (probabilidadDeCaptura != 1) {

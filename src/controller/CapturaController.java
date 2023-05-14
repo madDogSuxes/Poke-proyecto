@@ -15,10 +15,12 @@ import javafx.scene.image.ImageView;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 
+import controller.CapturaController;
 import crud.CapturaCrud;
-//import crud.CapturaCrud;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.stage.Stage;
@@ -57,6 +59,12 @@ public class CapturaController {
 	int pokeBall;
 
 	public void initialize() {
+		Date d = new Date();
+        System.out.println(d);
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
+        System.out.println(simpleDateFormat.format(d) + ".log");
+		
 		imgPokeball.setVisible(false);
 		btnSi.setVisible(false);
 		btnNo.setVisible(false);

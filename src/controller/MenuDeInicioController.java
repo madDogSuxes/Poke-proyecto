@@ -68,11 +68,11 @@ public class MenuDeInicioController {
 	
 	public void cajear(ActionEvent event) throws IOException{
 		try {
-			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Caja.fxml")));
-			System.out.println("Bienvenido a tu caja Pokemon.");
-	        scene = new Scene(root, 600, 331);
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/CajaYEquipo.fxml")));
+			System.out.println("Acabas de acceder a caja y a equipo.");
+	        scene = new Scene(root, 1124, 776);
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-	        stage.setTitle("Captura");
+	        stage.setTitle("Caja y Equipo");
 	        stage.setScene(scene);
 	        stage.show();
 		} catch (IOException e) {

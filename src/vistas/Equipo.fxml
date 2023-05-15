@@ -2,20 +2,5 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EquipoController">
-   <children>
-      <Button fx:id="btnVolver" layoutX="-3.0" layoutY="287.0" mnemonicParsing="false" onAction="#volverAMenu" prefHeight="46.0" prefWidth="52.0" text="&lt;-" />
-      <TableView layoutX="-3.0" prefHeight="331.0" prefWidth="606.0">
-        <columns>
-          <TableColumn fx:id="tipo1Pokemon" prefWidth="75.0" text="Tipo1" />
-          <TableColumn fx:id="tipo2Pokemon" prefWidth="75.0" text="Tipo2" />
-            <TableColumn fx:id="vitalidadPokemon" prefWidth="75.0" text="Vitalidad" />
-            <TableColumn fx:id="estaminaPokemon" prefWidth="75.0" text="Estamina" />
-            <TableColumn fx:id="ataquePokemon" prefWidth="75.0" text="Ataque" />
-            <TableColumn fx:id="sexoPokemon" prefWidth="79.19998779296873" text="Sexo" />
-            <TableColumn fx:id="nomPokemon" prefWidth="75.0" text="Nombre" />
-            <TableColumn fx:id="nivelPokemon" prefWidth="75.0" text="Nivel" />
-        </columns>
-      </TableView>
-   </children>
-</AnchorPane>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" />

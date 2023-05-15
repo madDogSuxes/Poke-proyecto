@@ -24,6 +24,7 @@ import crud.CapturaCrud;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.stage.Stage;
+import pokemone.Logger;
 import pokemone.Pokemon;
 
 public class CapturaController {
@@ -78,6 +79,7 @@ public class CapturaController {
 	public void capturarPokemon(ActionEvent event) {
 
 		int probabilidadDeCaptura = (int) (Math.random() * 3) + 1;
+		Logger.write("La probabilidad de captura es: "+probabilidadDeCaptura);
 
 		if (probabilidadDeCaptura != 1) {
 			capturaRealizada = true;

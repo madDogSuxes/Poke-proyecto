@@ -9,7 +9,7 @@ import java.util.Date;
 public class Logger {
 
     private static BufferedWriter bufferedWriter;
-    private static final String logPath = "logs/log.log";
+    private static final String logPath = "C:\\Users\\Legion\\Documents\\GitHub\\Poke-proyecto\\src\\principales\\log.log";
 
     public static BufferedWriter getOrCreateFileWriter() {
         if (bufferedWriter != null)

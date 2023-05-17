@@ -1,52 +1,167 @@
-//package crud;
-//
-//import java.sql.Connection;
-//import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
-//import java.util.LinkedList;
-//
-//import pokemone.Entrenador;
-//import pokemone.Estado;
-//import pokemone.Movimiento;
-//import pokemone.Pokemon;
-//import pokemone.Tipo;
-//
-//public class PokemonCrud {
-//
-//	/**
-//	 * 
-//	 * @param c
-//	 * @param e
-//	 * @param equipo valor 1 = equipo, valor 2 = caja
-//	 * @return
-//	 */
-//	
-//	public static LinkedList<Pokemon> listaPokemon(Connection c, Entrenador e, int lista){
-//		LinkedList<Pokemon> liston = new LinkedList<Pokemon>();
-//		String consulta = "SELECT\r\n" + "PK.ID_POKEMON\r\n" + "PK.NUM_POKEDEX\r\n" + "PK.NOM_POKEMON\r\n" 	
-//						  + "PK.IMG\r\n" + "PK.SONIDO\r\n" + "PK.MOTE\r\n" + "PK.ATAQUE\r\n" + 
-//						  "PK.ATAQUE_ESPECIAL" + "PK.DEFENSA" + "PK.DEFENSA_ESPECIAL" + "PK.ESTAMINA" +
-//						  "PK.FERTILIDAD\r\n" + "PK.SEXO\r\n" + "PK.TIPO1\r\n" + "PK.TIPO2\r\n" + "PK.NIVEL" + 
-//						  "PK.EXPERIENCIA" + "PK.ID_OBJETO" + "FROM POKEMON PK" + "INNER JOIN POKEDEX PK" 
-//						  + "ON PX.NUM_POLEDEX = P.NUM_POKEDEX" + "WHERE PK.ID_ENTRENADOR ="+e.getIdEntrenador();
-//				
-//		if (equipo == 1) {
-//			consulta += " AND EQUIPO = 1";
-//		}else {
-//			consulta += " AND EQUIPO = 2";
-//		}		
-//		
-//		PreparedStatement ps = null;
-//		try {
-//			ps = conexionSQL.getConnection().prepareStatement(consulta);
-//			ResultSet rs = ps.executeQuery(consulta);
-//			
-//			Pokemon p;
-//			while(rs.next()) {
-//				p = new Pokemon();
-//				p.setIdPokemon(rs.getInt("ID_POKEMON"));
-//				
-//			}
-//		}
-//	}
-//}
+package crud;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+
+import pokemone.Pokemon;
+
+public class PokemonCrud {
+
+	static LinkedList<Pokemon> coleccion = new LinkedList<Pokemon>();
+
+	static LinkedList<Pokemon> coleccionEquipo = new LinkedList<Pokemon>();
+	
+	public static LinkedList<Pokemon> getTodoPokemon() {
+		
+		
+		LinkedList<Pokemon> coleccion = new LinkedList<Pokemon>();
+
+		Connection connection = null;
+		Statement statement = null;
+		String url = "jdbc:mysql://localhost:3306/pokemon ";
+		String login = "root";
+		String password = "";
+
+		String query = "SELECT p.nom_pokemon,p.tipo1,p.tipo2,c.nivel,c.mote,c.sexo,c.vitalidad,c.ataque,c.defensa,c.ata_especial,c.def_especial,c.velocidad,c.fertilidad FROM pokedex p, pokemon c WHERE p.num_pokedex = c.id_pokemon AND c.equipo=2;";
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection(url, login, password);
+			statement = connection.createStatement();
+
+			ResultSet rs = statement.executeQuery(query);
+
+			while (rs.next()) {
+				Pokemon pokemon = new Pokemon();
+
+				pokemon.setNombre(rs.getString("p.nom_pokemon"));
+				pokemon.setNivel(rs.getInt("c.nivel"));
+				pokemon.setMote(rs.getString("c.mote"));
+				pokemon.setTipo1(rs.getString("p.tipo1"));
+				pokemon.setTipo2(rs.getString("p.tipo2"));
+				pokemon.setSexo(rs.getString("c.sexo"));
+				pokemon.setVitalidad(rs.getInt("c.vitalidad"));
+				pokemon.setAtaque(rs.getInt("c.ataque"));
+				pokemon.setDefensa(rs.getInt("c.defensa"));
+				pokemon.setAtEsp(rs.getInt("c.ata_especial"));
+				pokemon.setDefEsp(rs.getInt("c.def_especial"));
+				pokemon.setVelocidad(rs.getInt("c.velocidad"));
+				pokemon.setFertilidad(rs.getInt("c.fertilidad"));
+				
+				System.out.println(pokemon);
+
+				coleccion.add(pokemon);
+
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return coleccion;
+
+	}
+
+	public static LinkedList<Pokemon> getColeccion() {
+		return coleccion;
+	}
+
+	public static void setColeccion(LinkedList<Pokemon> coleccion) {
+		PokemonCrud.coleccion = coleccion;
+	}
+	public static LinkedList<Pokemon> getTodoPokemonEquipo() {
+		
+		
+		LinkedList<Pokemon> coleccionEquipo = new LinkedList<Pokemon>();
+
+		Connection connection = null;
+		Statement statement = null;
+		String url = "jdbc:mysql://localhost:3306/pokemon ";
+		String login = "root";
+		String password = "";
+
+		String query = "SELECT p.nom_pokemon,p.tipo1,p.tipo2,c.nivel,c.mote,c.sexo,c.vitalidad,c.ataque,c.defensa,c.ata_especial,c.def_especial,c.velocidad,c.fertilidad FROM pokedex p, pokemon c WHERE p.num_pokedex = c.id_pokemon AND c.equipo=1;";
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection(url, login, password);
+			statement = connection.createStatement();
+
+			ResultSet rs = statement.executeQuery(query);
+
+			while (rs.next()) {
+				Pokemon pokemon = new Pokemon();
+
+				pokemon.setNombre(rs.getString("p.nom_pokemon"));
+				pokemon.setNivel(rs.getInt("c.nivel"));
+				pokemon.setMote(rs.getString("c.mote"));
+				pokemon.setTipo1(rs.getString("p.tipo1"));
+				pokemon.setTipo2(rs.getString("p.tipo2"));
+				pokemon.setSexo(rs.getString("c.sexo"));
+				pokemon.setVitalidad(rs.getInt("c.vitalidad"));
+				pokemon.setAtaque(rs.getInt("c.ataque"));
+				pokemon.setDefensa(rs.getInt("c.defensa"));
+				pokemon.setAtEsp(rs.getInt("c.ata_especial"));
+				pokemon.setDefEsp(rs.getInt("c.def_especial"));
+				pokemon.setVelocidad(rs.getInt("c.velocidad"));
+				pokemon.setFertilidad(rs.getInt("c.fertilidad"));
+				
+				System.out.println(pokemon);
+
+				coleccion.add(pokemon);
+
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return coleccion;
+
+	}
+
+	public static LinkedList<Pokemon> getColeccionEquipo() {
+		return coleccionEquipo;
+	}
+
+	public static void setColeccionEquipo(LinkedList<Pokemon> coleccionEquipo) {
+		PokemonCrud.coleccionEquipo = coleccionEquipo;
+	}
+}
+

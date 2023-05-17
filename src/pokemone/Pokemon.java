@@ -558,6 +558,16 @@ public class Pokemon {
 
 	}
 	
+	public void ponerAcriar() {
+		//Primero vamos a sacar el mote de la madre y el del padre (si es que tiene)
+		
+		String moteMadre=getMote();
+		
+		String motePadre=getMote();
+		
+		int mitadMadre=moteMadre.length()/2;
+	}
+	
 	
 	
 	

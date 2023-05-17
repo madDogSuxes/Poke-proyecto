@@ -62,7 +62,7 @@ public class App extends Pokemon{
 			e.setNumPokedex(rs.getInt("num_pokedex"));
 			e.setNombre(rs.getString("nom_pokemon"));
 			e.setMote(rs.getString("MOTE"));
-			e.setSexo(rs.getString("SEXO").charAt(0));
+			e.setSexo(rs.getString("SEXO"));
 			e.setNivel(rs.getInt("NIVEL"));
 			e.setVitalidad(rs.getInt("VITALIDAD"));
 			e.setAtaque(rs.getInt("ATAQUE"));

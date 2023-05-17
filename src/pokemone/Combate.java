@@ -49,7 +49,7 @@ public class Combate extends Pokemon {
 	}
 
 	public Combate(int nivel, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
-			int velocidad, char sexo, int estamina, int fertilidad, Tipo tipo1, Tipo tipo2, int experiencia,
+			int velocidad, String sexo, int estamina, int fertilidad, String tipo1, String tipo2, int experiencia,
 			LinkedList<Turnos> turnos, int idCombate, String ganador, String jugador, String rival,
 			int numeroPokemonKORival, int numeroPokemonKOCoach, boolean retirarse) {
 		super(nivel, numeroPokemonKOCoach, numeroPokemonKOCoach, numeroPokemonKOCoach, nombre, mote, vitalidad, ataque,

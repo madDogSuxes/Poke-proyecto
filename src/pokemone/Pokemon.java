@@ -17,18 +17,18 @@ public class Pokemon {
 	protected int atEsp;
 	protected int defEsp;
 	protected int velocidad;
-	protected char sexo;
+	protected String sexo;
 	protected int estamina;
 	protected int fertilidad;
-	protected Tipo tipo1;
-	protected Tipo tipo2;
+	protected String tipo1;
+	protected String tipo2;
 	protected int experiencia;
 	protected static Estado estado;
 	protected int equipo;
 	protected LinkedList<Movimiento> listaMov;
 
 	public Pokemon(int nivel, int idEntrenador, int idPokemon, int numPokedex, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
-			int velocidad, char sexo, int estamina, int fertilidad, Tipo tipo1, Tipo tipo2, int experiencia,
+			int velocidad, String sexo2, int estamina, int fertilidad, String tipo12, String tipo22, int experiencia,
 			Estado estado, String imgDeFrente, String imgDeEspaldas) {
 		super();
 		this.idEntrenador = idEntrenador;
@@ -43,11 +43,11 @@ public class Pokemon {
 		this.atEsp = atEsp;
 		this.defEsp = defEsp;
 		this.velocidad = velocidad;
-		this.sexo = sexo;
+		this.sexo = sexo2;
 		this.estamina = estamina;
 		this.fertilidad = fertilidad;
-		this.tipo1 = tipo1;
-		this.tipo2 = tipo2;
+		this.tipo1 = tipo12;
+		this.tipo2 = tipo22;
 		this.experiencia = experiencia;
 		this.estado = estado;
 		this.imgDeEspaldas = imgDeEspaldas;
@@ -76,10 +76,10 @@ public class Pokemon {
 		this.atEsp = 0;
 		this.defEsp = 0;
 		this.velocidad = 0;
-		this.sexo = 'M';
+		this.sexo = "";
 		this.estamina = 100;
 		this.fertilidad = 1;
-		this.tipo1 = Tipo.NORMAL;
+		this.tipo1 = null;
 		this.tipo2 = null;
 		this.experiencia = 0;
 		this.estado = null;
@@ -210,7 +210,7 @@ public class Pokemon {
 		return "";
 	}
 
-	public void setSexo(char sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 
@@ -230,20 +230,20 @@ public class Pokemon {
 		this.fertilidad = fertilidad;
 	}
 
-	public Tipo getTipo1() {
+	public String getTipo1() {
 		return tipo1;
 	}
 
-	public void setTipo1(Tipo tipo1) {
-		this.tipo1 = tipo1;
+	public void setTipo1(String string) {
+		this.tipo1 = string;
 	}
 
-	public Tipo getTipo2() {
+	public String getTipo2() {
 		return tipo2;
 	}
 
-	public void setTipo2(Tipo tipo2) {
-		this.tipo2 = tipo2;
+	public void setTipo2(String string) {
+		this.tipo2 = string;
 	}
 
 	public int getExperiencia() {

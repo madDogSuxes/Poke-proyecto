@@ -18,36 +18,36 @@
       </ImageView>
       <TableView fx:id="tableview1" layoutX="58.0" layoutY="83.0" prefHeight="271.0" prefWidth="1008.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Nombre" />
-            <TableColumn prefWidth="75.0" text="Nivel" />
-            <TableColumn prefWidth="75.0" text="Tipo1" />
-            <TableColumn prefWidth="75.0" text="Tipo2" />
-            <TableColumn prefWidth="75.0" text="Sexo" />
-            <TableColumn prefWidth="75.0" text="Vida" />
-            <TableColumn prefWidth="75.0" text="Ata" />
-            <TableColumn prefWidth="75.0" text="Def" />
-            <TableColumn prefWidth="75.0" text="AtaEsp" />
-            <TableColumn prefWidth="75.0" text="DefEsp" />
-            <TableColumn prefWidth="75.0" text="Velocidad" />
-            <TableColumn prefWidth="75.0" text="Estamina" />
-            <TableColumn prefWidth="75.0" text="Fertilidad" />
+          <TableColumn fx:id="nombreCaja" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="nivelCaja" prefWidth="75.0" text="Nivel" />
+            <TableColumn fx:id="tipo1Caja" prefWidth="75.0" text="Tipo1" />
+            <TableColumn fx:id="tipo2Caja" prefWidth="75.0" text="Tipo2" />
+            <TableColumn fx:id="sexoCaja" prefWidth="75.0" text="Sexo" />
+            <TableColumn fx:id="vidaCaja" prefWidth="75.0" text="Vida" />
+            <TableColumn fx:id="ataCaja" prefWidth="75.0" text="Ata" />
+            <TableColumn fx:id="defCaja" prefWidth="75.0" text="Def" />
+            <TableColumn fx:id="ataEspeCaja" prefWidth="75.0" text="AtaEsp" />
+            <TableColumn fx:id="defEspeCaja" prefWidth="75.0" text="DefEsp" />
+            <TableColumn fx:id="veloCja" prefWidth="75.0" text="Velocidad" />
+            <TableColumn fx:id="estamCaja" prefWidth="75.0" text="Estamina" />
+            <TableColumn fx:id="fertCaja" prefWidth="75.0" text="Fertilidad" />
         </columns>
       </TableView>
       <TableView fx:id="tableview2" layoutX="58.0" layoutY="436.0" prefHeight="271.0" prefWidth="1008.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="Nombre" />
-            <TableColumn prefWidth="75.0" text="Nivel" />
-            <TableColumn prefWidth="75.0" text="Tipo1" />
-            <TableColumn prefWidth="75.0" text="Tipo2" />
-            <TableColumn prefWidth="75.0" text="Sexo" />
-            <TableColumn prefWidth="75.0" text="Vida" />
-            <TableColumn prefWidth="75.0" text="Ata" />
-            <TableColumn prefWidth="75.0" text="Def" />
-            <TableColumn prefWidth="75.0" text="AtaEsp" />
-            <TableColumn prefWidth="75.0" text="DefEsp" />
-            <TableColumn prefWidth="75.0" text="Velocidad" />
-            <TableColumn prefWidth="75.0" text="Estamina" />
-            <TableColumn prefWidth="75.0" text="Fertilidad" />
+            <TableColumn fx:id="nombreEquipo" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="nivelEquipo" prefWidth="75.0" text="Nivel" />
+            <TableColumn fx:id="tipo1Equipo" prefWidth="75.0" text="Tipo1" />
+            <TableColumn fx:id="tipo2Equipo" prefWidth="75.0" text="Tipo2" />
+            <TableColumn fx:id="sexoEquipo" prefWidth="75.0" text="Sexo" />
+            <TableColumn fx:id="vidaEquipo" prefWidth="75.0" text="Vida" />
+            <TableColumn fx:id="ataEquipo" prefWidth="75.0" text="Ata" />
+            <TableColumn fx:id="defEquipo" prefWidth="75.0" text="Def" />
+            <TableColumn fx:id="ataEspeEquipo" prefWidth="75.0" text="AtaEsp" />
+            <TableColumn fx:id="defEspeEquipo" prefWidth="75.0" text="DefEsp" />
+            <TableColumn fx:id="veloEquipo" prefWidth="75.0" text="Velocidad" />
+            <TableColumn fx:id="estamEquipo" prefWidth="75.0" text="Estamina" />
+            <TableColumn fx:id="fertEquipo" prefWidth="75.0" text="Fertilidad" />
          </columns>
       </TableView>
       <Button fx:id="btnVolver" layoutX="522.0" layoutY="722.0" mnemonicParsing="false" onAction="#volverAMenu" prefHeight="40.0" prefWidth="80.0" text="Volver" />

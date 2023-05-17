@@ -42,7 +42,7 @@ public class MenuDeInicioController {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Combate.fxml")));
 			System.out.println("Bienvenido a combate.");
-	        scene = new Scene(root, 600, 331);
+	        scene = new Scene(root, 600, 280);
 	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	        stage.setTitle("MenuDeInicio");
 	        stage.setScene(scene);

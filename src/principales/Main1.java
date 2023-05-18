@@ -11,6 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
+/**
+ * Esta clase es el Main que hace que la aplicación Pokemon encienda
+ * @author Miguel y Jesus
+ */
+
 public class Main1 extends Application {
 	@Override
 	public void start(Stage primaryStage) {

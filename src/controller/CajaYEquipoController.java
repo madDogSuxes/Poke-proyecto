@@ -22,6 +22,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import pokemone.Pokemon;
 
+/**
+ * Clase controller que almacena los pokemons en la caja y en el equipo
+ * @author Miguel y Jesús
+ *
+ */
+
 public class CajaYEquipoController {
 
 	@FXML
@@ -88,6 +94,11 @@ public class CajaYEquipoController {
 	private Scene scene;
 
 	static LinkedList<Pokemon> coleccion;
+	
+	/**
+	 * 
+	 * @return lista
+	 */
 
 	public ObservableList<Pokemon> metodo() {
 		
@@ -140,6 +151,12 @@ public class CajaYEquipoController {
 		veloEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("velocidad"));
 	
 	}
+	
+	/**
+	 * Método para volver al menú
+	 * @param event
+	 * @throws IOException
+	 */
 	
 	@FXML
 	public void volverAMenu(ActionEvent event) throws IOException {

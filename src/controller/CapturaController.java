@@ -27,6 +27,12 @@ import javafx.stage.Stage;
 import pokemone.Logger;
 import pokemone.Pokemon;
 
+/**
+ * Clase controller que ayuda a realizar la captura
+ * @author Miguel y Jesús
+ *
+ */
+
 public class CapturaController {
 	@FXML
 	private Button btnCapturar;
@@ -59,6 +65,9 @@ public class CapturaController {
 
 	int pokeBall;
 
+	/**
+	 * Método para inicializar
+	 */
 	public void initialize() {
 		Date d = new Date();
         System.out.println(d);
@@ -75,13 +84,47 @@ public class CapturaController {
 		txtMote3.setVisible(false);
 	}
 
+	/**
+	 * Método que captura al pokemon y calcula la probabilidad de captura
+	 * @param event
+	 */
+	
 	@FXML
 	public void capturarPokemon(ActionEvent event) {
 
 		int probabilidadDeCaptura = (int) (Math.random() * 3) + 1;
 		Logger.write("La probabilidad de captura es: "+probabilidadDeCaptura);
+		Pokemon p = new Pokemon();
+		int idEntrenador;
+		int idPokemon;
+		int numPokedex;
+		String mote;
+		String sexo; 
+		int nivel; 
+		int vitalidad;
+		int ataque;
+		int defensa;
+		int atEsp;
+		int defEsp;
+		int velocidad;
+		int estamina;
+		int fertilidad;
+		int equipo;
 
 		if (probabilidadDeCaptura != 1) {
+			
+			p = CapturaCrud.capturarPokemon(1, CapturaCrud.numPokedex, p.getMote(), "H", 1,
+					vitalidad = (int) (Math.random() * ((20 - 1) + 1)),
+				    ataque = (int) (Math.random() * ((20 - 1) + 1)),
+				    defensa = (int) (Math.random() * ((20 - 1) + 1)),
+				    atEsp = (int) (Math.random() * ((20 - 1) + 1)),
+				    defEsp = (int) (Math.random() * ((20 - 1) + 1)),
+				    velocidad = (int) (Math.random() * ((20 - 1) + 1)),
+				    estamina = (int) (Math.random() * ((20 - 1) + 1)),
+				    fertilidad = (int) (Math.random() * ((20 - 1) + 1)), equipo = 2);
+			
+			String sql = "SELECT num_pokedex, nombre_pokemon, img_frente FROM pokedex ORDER BY RAND() LIMIT 1;";
+			
 			capturaRealizada = true;
 			imgPokemonEncontrado.setVisible(false);
 			System.out.println("Has capturado un pokemon.");
@@ -110,6 +153,11 @@ public class CapturaController {
 		}
 	}
 
+	/**
+	 * Método que busca al pokemon para ser capturado
+	 * @param event
+	 */
+	
 	@FXML
 	public void buscarPokemon(ActionEvent event) {
 
@@ -133,6 +181,12 @@ public class CapturaController {
 
 	}
 
+	/**
+	 * Método que usas para volver al menú
+	 * @param event
+	 * @throws IOException
+	 */
+	
 	public void volverAMenu(Event event) throws IOException {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/MenuDeInicio.fxml")));

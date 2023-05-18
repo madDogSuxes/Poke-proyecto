@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CapturaController">
+   <children>
+      <ImageView fitHeight="331.0" fitWidth="586.0" layoutX="-3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagen/EscenarioCaptura.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgPokemonEncontrado" fitHeight="202.0" fitWidth="326.0" layoutX="186.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnCapturar" layoutX="229.0" layoutY="248.0" mnemonicParsing="false" onAction="#capturarPokemon" text="Capturar" />
+      <TextField fx:id="txtMote" layoutX="186.0" layoutY="72.0" prefHeight="26.0" prefWidth="234.0" text="¿Quieres ponerle un mote a tu Pokemon?" />
+      <TextField fx:id="txtMote2" layoutX="204.0" layoutY="163.0" prefHeight="26.0" prefWidth="137.0" promptText="Mote de tu Pokemon" />
+      <Button fx:id="btnBuscar" layoutX="318.0" layoutY="248.0" mnemonicParsing="false" onAction="#buscarPokemon" prefHeight="26.0" prefWidth="62.0" text="Buscar" />
+      <Button fx:id="btnVolver" layoutX="23.0" layoutY="274.0" mnemonicParsing="false" onAction="#volverAMenu" text="Volver" />
+      <Button fx:id="btnSi" layoutX="229.0" layoutY="118.0" mnemonicParsing="false" onAction="#siPonerMote" text="Si" />
+      <Button fx:id="btnNo" layoutX="349.0" layoutY="118.0" mnemonicParsing="false" onAction="#noPonerMote" text="No" />
+      <Text fx:id="txtMote3" layoutX="156.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¡¡Enhorabuena!! Has capturado a un Pokemon" textAlignment="CENTER" wrappingWidth="269.33665466308594">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnAceptarMote" layoutX="349.0" layoutY="163.0" mnemonicParsing="false" onAction="#guardarMote" text="Aceptar" />
+      <ImageView fx:id="imgPokeball" fitHeight="56.0" fitWidth="62.0" layoutX="128.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagen/pokeBall.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

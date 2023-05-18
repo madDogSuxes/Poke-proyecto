@@ -14,6 +14,12 @@ import java.util.Objects;
 
 import javafx.event.ActionEvent;
 
+/**
+ * Clase controller 
+ * @author Miguel y Jesus
+ *
+ */
+
 public class CombateController {
 	@FXML
 	private Button btnVolver;
@@ -21,6 +27,12 @@ public class CombateController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+	
+	/**
+	 * Método que si lo usas vuelves al menú
+	 * @param event
+	 * @throws IOException
+	 */
 	
 	public void volverAlMenu(ActionEvent event) throws IOException{
 		try {

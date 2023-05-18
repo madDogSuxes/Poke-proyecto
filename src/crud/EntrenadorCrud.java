@@ -7,11 +7,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Clase crud que ayuda a iniciar sesión y a completar el registro
+ * @author Miguel y Jesus
+ */
+
 public class EntrenadorCrud {
 
 	private int pokeDollar;
 
 	private static boolean cambioDeVentana;
+	
+	/**
+	 * @param nombre
+	 * @param contraseña
+	 * @param pokeDollar
+	 */
 
 	public static void insertarDatos(String nombre, String contraseña, int pokeDollar) {
 
@@ -54,6 +65,11 @@ public class EntrenadorCrud {
 		}
 	}
 
+	/**
+	 * @param nombre
+	 * @param contraseña
+	 */
+	
 	public static void comprobarDatos(String nombre, String contraseña) {
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -103,6 +119,11 @@ public class EntrenadorCrud {
 			}
 		}
 	}
+	
+	/**
+	 * Métodos que ayudan a obtener el cambio de ventana una vez comprobado el registro y a actualizar Pokedollars
+	 * @return pokeDollar & cambioDeVentana
+	 */
 
 	public static boolean obtenerCambioDeVentana() {
 		return cambioDeVentana;

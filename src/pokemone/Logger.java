@@ -24,7 +24,11 @@ public class Logger {
 
     public static void write(String line) {
         try {
-            getOrCreateFileWriter().write(line);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String timestamp = dateFormat.format(new Date());
+            getOrCreateFileWriter().write("Has entrado a captura: " + timestamp);
+            getOrCreateFileWriter().newLine();
+            getOrCreateFileWriter().flush();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

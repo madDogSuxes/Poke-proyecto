@@ -18,8 +18,6 @@ import pokemone.Pokemon;
 
 public class CapturaCrud {
 
-	public static int numPokedex;
-
 	public static Pokemon buscarPokemon() {
 		Connection connection = null;
 		Statement statement = null;
@@ -41,7 +39,7 @@ public class CapturaCrud {
 			while (rs.next()) {
 				String sprite = rs.getString("img_frente");
 				p = new Pokemon();
-
+				p.setNumPokedex(rs.getInt("num_pokedex"));
 				p.setImgDeFrente(sprite);
 			}
 

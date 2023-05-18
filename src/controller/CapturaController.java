@@ -62,6 +62,7 @@ public class CapturaController {
 	private Parent root;
 
 	protected boolean capturaRealizada;
+	private Pokemon p;
 
 	int pokeBall;
 
@@ -74,6 +75,8 @@ public class CapturaController {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
         System.out.println(simpleDateFormat.format(d) + ".log");
+        Logger.write("Has entrado a captura a: "+simpleDateFormat);
+        Logger.close();
 		
 		imgPokeball.setVisible(false);
 		btnSi.setVisible(false);
@@ -93,8 +96,7 @@ public class CapturaController {
 	public void capturarPokemon(ActionEvent event) {
 
 		int probabilidadDeCaptura = (int) (Math.random() * 3) + 1;
-		Logger.write("La probabilidad de captura es: "+probabilidadDeCaptura);
-		Pokemon p = new Pokemon();
+		System.out.println("La probabilidad de captura es: "+probabilidadDeCaptura);
 		int idEntrenador;
 		int idPokemon;
 		int numPokedex;
@@ -113,7 +115,7 @@ public class CapturaController {
 
 		if (probabilidadDeCaptura != 1) {
 			
-			p = CapturaCrud.capturarPokemon(1, CapturaCrud.numPokedex, p.getMote(), "H", 1,
+			CapturaCrud.capturarPokemon(11, p.getNumPokedex(), p.getMote(), "H", 1,
 					vitalidad = (int) (Math.random() * ((20 - 1) + 1)),
 				    ataque = (int) (Math.random() * ((20 - 1) + 1)),
 				    defensa = (int) (Math.random() * ((20 - 1) + 1)),
@@ -163,7 +165,7 @@ public class CapturaController {
 
 		boolean buscarPokemon = true;
 
-		Pokemon p = CapturaCrud.buscarPokemon();
+		p = CapturaCrud.buscarPokemon();
 
 		File file = new File(p.getImgDeFrente());
 

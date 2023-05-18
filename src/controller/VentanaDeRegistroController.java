@@ -25,6 +25,11 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.PasswordField;
 
+/**
+ * Clase controller para registrarte
+ * @author Miguel y Jesus
+ *
+ */
 public class VentanaDeRegistroController {
 
 	@FXML
@@ -46,14 +51,24 @@ public class VentanaDeRegistroController {
 	private Parent root;
 	private Scene scene;
 
+	/**
+	 * Método para inicializar
+	 * @param arg0
+	 * @param arg1
+	 */
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 	}
 
 	public void verContraseña() {
-		// Recuerda hacerlo
+		
 	}
-
+	
+	/**
+	 * Método para registrarse
+	 * @param event
+	 * @throws IOException
+	 */
 	public void registrarse(Event event) throws IOException {
 
 		int pokeDollar;
@@ -73,6 +88,11 @@ public class VentanaDeRegistroController {
 		}
 	}
 
+	/**
+	 * Método para volver al inicio (log-in)
+	 * @param event
+	 * @throws IOException
+	 */
 	public void volverAInicio(Event event) throws IOException {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Inicio.fxml")));

@@ -4,6 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Esta clase hace una conexion con nuestra base de datos
+ * @author Miguel y Jesus
+ */
+
 public class ConexionSQL {
 
 	protected static String url = "jdbc:mysql://localhost:3306/pokemon";
@@ -29,4 +34,9 @@ public class ConexionSQL {
 
 		return connection;
 	}
+	/**
+	 * Método que hace la conexión a la base de datos
+	 * @param url, login y password
+	 * @return Conexión establecida(connection)
+	 */
 }

@@ -53,6 +53,10 @@ public class Pokemon {
 		this.imgDeEspaldas = imgDeEspaldas;
 		this.imgDeFrente = imgDeFrente;
 	}
+	
+	public int getNumPokedex() {
+		return numPokedex;
+	}
 
 	public static Estado getEstado() {
 		return estado;

@@ -14,6 +14,12 @@ import java.util.Objects;
 
 import javafx.event.ActionEvent;
 
+/**
+ * Clase controller que te muestra un menú para elegir hacia dónde ir
+ * @author Miguel y Jesús
+ *
+ */
+
 public class MenuDeInicioController {
 	@FXML
 	private Button btnCombate;
@@ -38,6 +44,10 @@ public class MenuDeInicioController {
 	private Parent root;
 	private Scene scene;
 	
+	/**
+	 * Método que te hace ir hacia Combate
+	 * @param event
+	 */
 	public void combatir(ActionEvent event) {
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Combate.fxml")));
@@ -51,7 +61,12 @@ public class MenuDeInicioController {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * Método que te hace ir hacia Capturar
+	 * @param event
+	 * @throws IOException
+	 */
 	public void capturar(ActionEvent event) throws IOException{
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Captura.fxml")));
@@ -66,6 +81,11 @@ public class MenuDeInicioController {
 		}
 	}
 	
+	/**
+	 * Método que te hace ir a Caja y Equipo
+	 * @param event
+	 * @throws IOException
+	 */
 	public void cajear(ActionEvent event) throws IOException{
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/CajaYEquipo.fxml")));
@@ -80,6 +100,12 @@ public class MenuDeInicioController {
 		}
 	} 
 
+	
+	/**
+	 * Método que te hace ir de vuelta al Log-in
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	public void volverAlLogin(ActionEvent event) throws IOException{
 		try {

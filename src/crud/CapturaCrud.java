@@ -1,6 +1,7 @@
 package crud;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,8 +10,14 @@ import java.sql.Statement;
 
 import pokemone.Pokemon;
 
+/**
+ * Esta clase Crud nos ayuda a construir los métodos buscarPokemon y capturarPokemon
+ * @author Miguel y Jesús
+ * 
+ */
+
 public class CapturaCrud {
-	
+
 	public static Pokemon buscarPokemon() {
 		Connection connection = null;
 		Statement statement = null;
@@ -32,7 +39,7 @@ public class CapturaCrud {
 			while (rs.next()) {
 				String sprite = rs.getString("img_frente");
 				p = new Pokemon();
-
+				p.setNumPokedex(rs.getInt("num_pokedex"));
 				p.setImgDeFrente(sprite);
 			}
 
@@ -60,8 +67,29 @@ public class CapturaCrud {
 		}
 		return p;
 	}
+
+	/**
+	 * 
+	 * @param idEntrenador
+	 * @param numPokedex
+	 * @param mote
+	 * @param sexo
+	 * @param nivel
+	 * @param vitalidad
+	 * @param ataque
+	 * @param defensa
+	 * @param atEsp
+	 * @param defEsp
+	 * @param velocidad
+	 * @param estamina
+	 * @param fertilidad
+	 * @param equipo
+	 * @return p
+	 */
 	
-	public static Pokemon capturarPokemon() {
+	public static Pokemon capturarPokemon(int idEntrenador, int numPokedex, String mote, String sexo, int nivel, 
+										  int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
+										  int velocidad, int estamina, int fertilidad, int equipo) {
 		Connection connection = null;
 		Statement statement = null;
 		String url = "jdbc:mysql://localhost:3306/pokemon";
@@ -75,25 +103,11 @@ public class CapturaCrud {
 			connection = DriverManager.getConnection(url, login, password);
 			statement = connection.createStatement();
 
-			String sql = "INSERT INTO pokemon (num_pokedex, mote, sexo, nivel, vitalidad, ataque, defensa, ata_especial, def_especial, velocidad, estamina, fertilidad, equipo, nombre_pok) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			
-			preparedStatement.setInt(1, p.numPokedex());
-			preparedStatement.setString(2, p.getMote());
-			preparedStatement.setString(3, p.getSexo());
-			preparedStatement.setInt(4, p.getNivel());
-			preparedStatement.setInt(5, p.getVitalidad());
-			preparedStatement.setInt(6, p.getAtaque());
-			preparedStatement.setInt(7, p.getDefensa());
-			preparedStatement.setInt(8, p.getAtEsp());
-			preparedStatement.setInt(9, p.getDefEsp());
-			preparedStatement.setInt(10, p.getVelocidad());
-			preparedStatement.setInt(11, p.getEstamina());
-			preparedStatement.setInt(12, p.getFertilidad());
-			preparedStatement.setString(13, p.getNombre());
-
-			preparedStatement.executeUpdate();
+			String sql = "INSERT INTO pokemon (id_entrenador, num_pokedex, mote, sexo, nivel, vitalidad, ataque, defensa, ata_especial, def_especial, velocidad, estamina, fertilidad, equipo)"
+					+ " VALUES (" + idEntrenador + ", " + numPokedex + ", '" + mote + "', '" + sexo + "', " + nivel
+					+ ", " + vitalidad + ", " + ataque + ", " + defensa + ", " + atEsp + ", "
+					+ defEsp + ", " + velocidad + ", " + estamina + ", " + fertilidad + ", " + equipo+ ")";
+			statement.executeUpdate(sql);
 
 			System.out.println("Pokémon capturado y guardado en la caja.");
 

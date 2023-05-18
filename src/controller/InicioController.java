@@ -28,6 +28,12 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.PasswordField;
 
+/**
+ * Clase controller que te muestra el Inicio de la aplicación Pokemon
+ * @author Miguel y Jesús
+ *
+ */
+
 public class InicioController implements Initializable {
 
 	@FXML
@@ -63,7 +69,11 @@ public class InicioController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		txtError.setVisible(false);
 	}
-
+	
+	/**
+	 * Método para ir a la ventana de registro
+	 * @param event
+	 */
 	@FXML
 	public void registrarse(ActionEvent event) {
 		try {
@@ -77,12 +87,21 @@ public class InicioController implements Initializable {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * Método para verContraseña
+	 * @param event
+	 */
 	@FXML
 	public void verContraseña(ActionEvent event) {
-		// Recuerda hacerlo
-	}
 
+	}
+	
+	/**
+	 * Método para loguearse
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	public void loguearse(Event event) throws IOException {
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InicioController">
+   <children>
+      <ImageView fx:id="imagen1" fitHeight="338.0" fitWidth="600.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagen/FondoDeInicio2.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="textField1" layoutX="225.0" layoutY="153.0" promptText="Usuario" />
+      <PasswordField fx:id="passwordField1" layoutX="225.0" layoutY="194.0" promptText="Contraseña" />
+      <Button fx:id="btnLogin" layoutX="309.0" layoutY="237.0" mnemonicParsing="false" onAction="#loguearse" prefHeight="26.0" prefWidth="65.0" text="Login" />
+      <ImageView fx:id="imagen2" fitHeight="102.0" fitWidth="392.0" layoutX="161.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagen/letrero-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnRegistro" layoutX="225.0" layoutY="237.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="26.0" prefWidth="65.0" text="Registro" />
+      <ToggleButton fx:id="toggle1" layoutX="386.0" layoutY="194.0" mnemonicParsing="false" onAction="#verContraseña" prefHeight="20.0" prefWidth="33.0" text="ver" />
+      <Text fx:id="txtError" fill="#ff2222" layoutX="161.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="***usuario o contraseña incompletos/incorrectos***" wrappingWidth="276.0902404785156" />
+   </children>
+</AnchorPane>

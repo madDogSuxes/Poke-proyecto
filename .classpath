@@ -3,52 +3,55 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="xtend-gen"/>
 	<classpathentry kind="src" path="Imagen"/>
+	<classpathentry excluding="src/|xtend-gen/|Imagen/" kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Legion/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/lib/javafx.base.jar">
+	<classpathentry kind="lib" path="C:/Users/JesúsLorcaLópez/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/javafx.base.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Legion/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/lib/javafx.controls.jar">
+	<classpathentry kind="lib" path="C:/Users/JesúsLorcaLópez/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/javafx.controls.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Legion/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/lib/javafx.fxml.jar">
+	<classpathentry kind="lib" path="C:/Users/JesúsLorcaLópez/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/javafx.fxml.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Legion/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/lib/javafx.graphics.jar">
+	<classpathentry kind="lib" path="C:/Users/JesúsLorcaLópez/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/javafx.graphics.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Legion/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/lib/javafx.media.jar">
+	<classpathentry kind="lib" path="C:/Users/JesúsLorcaLópez/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/javafx.media.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Legion/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/lib/javafx.swing.jar">
+	<classpathentry kind="lib" path="C:/Users/JesúsLorcaLópez/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/javafx.swing.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Legion/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/lib/javafx.web.jar">
+	<classpathentry kind="lib" path="C:/Users/JesúsLorcaLópez/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/javafx.web.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Legion/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/lib/javafx-swt.jar">
+	<classpathentry kind="lib" path="C:/Users/JesúsLorcaLópez/Documents/GitHub/Poke-proyecto/lib/javafx-sdk-20/javafx-swt.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/mysql-connector-j-8.0.32.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JesúsLorcaLópez/Documents/GitHub/Poke-proyecto/lib/mysql-connector-j-8.0.32.jar"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

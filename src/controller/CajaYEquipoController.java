@@ -98,7 +98,7 @@ public class CajaYEquipoController {
 	static LinkedList<Pokemon> equipo;
 
 	/**
-	 * 
+	 * Método coleccion para introducir pokemons dentro de la caja
 	 * @return lista
 	 */
 
@@ -115,8 +115,13 @@ public class CajaYEquipoController {
 		return lista;
 	}
 
+	/**
+	 * Método equipo para introducir Pokemons dentro del equipo
+	 * @return lista
+	 */
+	
 	public ObservableList<Pokemon> metodoEquipo() {
-		
+
 		ObservableList<Pokemon> lista = FXCollections.observableArrayList();
 
 		for (int i = 0; i < equipo.size(); i++) {
@@ -150,7 +155,9 @@ public class CajaYEquipoController {
 		veloCja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("velocidad"));
 
 		coleccion = PokemonCrud.getTodoPokemonEquipo();
+		
 		tableview2.setItems(metodoEquipo());
+		
 		nombreEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nombre"));
 		nivelEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nivel"));
 		tipo1Equipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("tipo1"));
@@ -166,29 +173,26 @@ public class CajaYEquipoController {
 		veloEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("velocidad"));
 
 	}
-	
+
 	@FXML
 	public void transferirAccionToEquipo(ActionEvent event) {
-		 
+
 		ObservableList<Pokemon> pokemonSeleccionado = tableview1.getSelectionModel().getSelectedItems();
-
 		Pokemon p = pokemonSeleccionado.get(0);
-
 		equipo.add(p);
-
 		coleccion.remove(p);
 
 		PokemonCrud.transferirPokemonEquipo(p.getNumPokedex());
-
 		tableview2.setItems(metodoEquipo());
 		tableview1.setItems(metodoColeccion());
 
 		System.out.println("Has cambiado tu Pokemon a Equipo");
-		
+
 	}
-	
+
 	@FXML
 	public void transferirAccionToCaja(ActionEvent event) {
+		
 		ObservableList<Pokemon> pokemonSeleccionadoEquipo = tableview2.getSelectionModel().getSelectedItems();
 		Pokemon p = pokemonSeleccionadoEquipo.get(0);
 		coleccion.add(p);
@@ -200,7 +204,7 @@ public class CajaYEquipoController {
 
 		System.out.println("El pokemon fue traspado a la Caja");
 	}
-	
+
 	/**
 	 * Método para volver al menú
 	 * 

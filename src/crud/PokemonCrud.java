@@ -111,7 +111,7 @@ public class PokemonCrud {
         String login = "root";
         String password = "";
 
-        String query = "SELECT p.nom_pokemon,p.tipo1,p.tipo2,c.nivel,c.mote,c.sexo,c.vitalidad,c.ataque,c.defensa,c.ata_especial,c.def_especial,c.velocidad,c.fertilidad FROM pokedex p, pokemon c WHERE p.num_pokedex = c.id_pokemon AND c.equipo=1;";
+        String query = "SELECT p.tipo1,p.tipo2,c.nivel,c.mote,c.sexo,c.vitalidad,c.ataque,c.defensa,c.ata_especial,c.def_especial,c.velocidad,c.fertilidad FROM pokedex p, pokemon c WHERE p.num_pokedex = c.id_pokemon AND c.equipo=1;";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -123,7 +123,7 @@ public class PokemonCrud {
             while (rs.next()) {
                 Pokemon pokemon = new Pokemon();
 
-                pokemon.setNombre(rs.getString("p.nom_pokemon"));
+                pokemon.setNombre(rs.getString("p.nombre_pokemon"));
                 pokemon.setNivel(rs.getInt("c.nivel"));
                 pokemon.setMote(rs.getString("c.mote"));
                 pokemon.setTipo1(rs.getString("p.tipo1"));

@@ -61,5 +61,7 @@
             <Font name="Berlin Sans FB Bold" size="51.0" />
          </font>
       </Text>
+      <Button fx:id="btnTransferir2" layoutX="103.0" layoutY="375.0" mnemonicParsing="false" onAction="#transferirPokemonCaja" prefHeight="26.0" prefWidth="141.0" text="Transferir a Caja" />
+      <Button fx:id="btnTransferir1" layoutX="887.0" layoutY="375.0" mnemonicParsing="false" onAction="#transferirPokemonEquipo" prefHeight="26.0" prefWidth="141.0" text="Transferir a Equipo" />
    </children>
 </AnchorPane>

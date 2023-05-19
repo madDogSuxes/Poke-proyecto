@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="521.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PokedexController">
+   <children>
+      <ImageView fx:id="imagenEscenario" fitHeight="340.0" fitWidth="609.0" layoutX="-7.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagen/fondoPokedex.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnVolver" layoutX="14.0" layoutY="291.0" mnemonicParsing="false" onAction="#volverAMenu" text="Volver" />
+      <TableView fx:id="tablaPokedex" layoutX="109.0" layoutY="67.0" prefHeight="200.0" prefWidth="304.0">
+        <columns>
+          <TableColumn fx:id="numeroPokedex" prefWidth="100.0" text="numeroPokedex" />
+          <TableColumn fx:id="nombrePokedex" prefWidth="106.40003967285156" text="nombrePokemon" />
+            <TableColumn fx:id="tipo1Pokedex" prefWidth="46.4000244140625" text="tipo1" />
+            <TableColumn fx:id="tipo2Pokedex" prefWidth="48.79998779296875" text="tipo2" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

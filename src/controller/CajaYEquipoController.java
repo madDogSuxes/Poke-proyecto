@@ -34,6 +34,10 @@ public class CajaYEquipoController {
 	@FXML
 	private Button btnVolver;
 	@FXML
+	private Button btnTransferir1;
+	@FXML
+	private Button btnTransferir2;
+	@FXML
 	private TableView<Pokemon> tableview1;
 	@FXML
 	private TableView<Pokemon> tableview2;
@@ -133,8 +137,13 @@ public class CajaYEquipoController {
 		return lista;
 	}
 
+	/**
+	 * Método para que salga lo que ya tienes añadido en tu base de datos en las tablas equipo y caja
+	 * @param arg0
+	 * @param arg1
+	 */
+	
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
 
 		coleccion = PokemonCrud.getTodoPokemon();
 
@@ -174,9 +183,17 @@ public class CajaYEquipoController {
 
 	}
 
+	
+	/**
+	 * Método para transferir a equipo
+	 * @param event
+	 */
+	
 	@FXML
-	public void transferirAccionToEquipo(ActionEvent event) {
+	public void transferirPokemonEquipo(ActionEvent event) {
 
+		System.out.println("Acabas de transferir tu pokemon a equipo");
+		
 		ObservableList<Pokemon> pokemonSeleccionado = tableview1.getSelectionModel().getSelectedItems();
 		Pokemon p = pokemonSeleccionado.get(0);
 		equipo.add(p);
@@ -190,8 +207,15 @@ public class CajaYEquipoController {
 
 	}
 
+	/**
+	 * Método para transferir a caja
+	 * @param event
+	 */
+	
 	@FXML
-	public void transferirAccionToCaja(ActionEvent event) {
+	public void transferirPokemonCaja(ActionEvent event) {
+		
+		System.out.println("Acabas de transferir tu pokemon a caja");
 		
 		ObservableList<Pokemon> pokemonSeleccionadoEquipo = tableview2.getSelectionModel().getSelectedItems();
 		Pokemon p = pokemonSeleccionadoEquipo.get(0);

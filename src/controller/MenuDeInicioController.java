@@ -98,7 +98,21 @@ public class MenuDeInicioController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	} 
+	}
+	
+	public void irAPokedex(ActionEvent event) throws IOException {
+		try {
+			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/Pokedex.fxml")));
+			System.out.println("Acabas de acceder a tu Pokedex");
+	        scene = new Scene(root, 515, 340);
+	        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        stage.setTitle("Pokedex");
+	        stage.setScene(scene);
+	        stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	
 	/**

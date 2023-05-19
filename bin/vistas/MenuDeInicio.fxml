@@ -18,7 +18,7 @@
       <Button fx:id="btnCriar" layoutX="115.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Criar" />
       <Button fx:id="btnTienda" layoutX="407.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Tienda" />
       <Button fx:id="btnEntrenar" layoutX="115.0" layoutY="269.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Entrenar" />
-      <Button fx:id="btnPokedex" layoutX="407.0" layoutY="269.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Pokedex" />
+      <Button fx:id="btnPokedex" layoutX="407.0" layoutY="269.0" mnemonicParsing="false" onAction="#irAPokedex" prefHeight="26.0" prefWidth="70.0" text="Pokedex" />
       <Button fx:id="btnSalir" layoutX="14.0" layoutY="270.0" mnemonicParsing="false" onAction="#volverAlLogin" text="Salir" />
    </children>
 </AnchorPane>

@@ -121,11 +121,11 @@ public class Entrenador extends Pokemon{
 				+ ", listaCaja=" + listaCaja + ", pokeBalls= "+ pokeBalls + "]";
 	}
 	
+	boolean seleccionarPokemon = false;
+	boolean moverACaja = false;
+	int pokemonEnPrincipal = 0;
+	int pokemonEnCaja = 0;
 	public void moverACaja() {
-		boolean seleccionarPokemon = false;
-		boolean moverACaja = false;
-		int pokemonEnPrincipal = 0;
-		int pokemonEnCaja = 0;
 		String respuesta;
 		if (seleccionarPokemon == true) {
 			System.out.println("¿Quieres mover este pokemon a la caja?");
@@ -142,6 +142,40 @@ public class Entrenador extends Pokemon{
 		}
 	}
 	
+	
+	
+	public boolean isSeleccionarPokemon() {
+		return seleccionarPokemon;
+	}
+
+	public void setSeleccionarPokemon(boolean seleccionarPokemon) {
+		this.seleccionarPokemon = seleccionarPokemon;
+	}
+
+	public boolean isMoverACaja() {
+		return moverACaja;
+	}
+
+	public void setMoverACaja(boolean moverACaja) {
+		this.moverACaja = moverACaja;
+	}
+
+	public int getPokemonEnPrincipal() {
+		return pokemonEnPrincipal;
+	}
+
+	public void setPokemonEnPrincipal(int pokemonEnPrincipal) {
+		this.pokemonEnPrincipal = pokemonEnPrincipal;
+	}
+
+	public int getPokemonEnCaja() {
+		return pokemonEnCaja;
+	}
+
+	public void setPokemonEnCaja(int pokemonEnCaja) {
+		this.pokemonEnCaja = pokemonEnCaja;
+	}
+
 	public void moverAPrincipal() {
 		boolean seleccionarPokemon = false;
 		boolean moverAPrincipal = false;

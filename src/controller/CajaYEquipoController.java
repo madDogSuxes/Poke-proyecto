@@ -103,6 +103,7 @@ public class CajaYEquipoController {
 
 	/**
 	 * Método coleccion para introducir pokemons dentro de la caja
+	 * 
 	 * @return lista
 	 */
 
@@ -121,9 +122,10 @@ public class CajaYEquipoController {
 
 	/**
 	 * Método equipo para introducir Pokemons dentro del equipo
+	 * 
 	 * @return lista
 	 */
-	
+
 	public ObservableList<Pokemon> metodoEquipo() {
 
 		ObservableList<Pokemon> lista = FXCollections.observableArrayList();
@@ -138,11 +140,13 @@ public class CajaYEquipoController {
 	}
 
 	/**
-	 * Método para que salga lo que ya tienes añadido en tu base de datos en las tablas equipo y caja
+	 * Método para que salga lo que ya tienes añadido en tu base de datos en las
+	 * tablas equipo y caja
+	 * 
 	 * @param arg0
 	 * @param arg1
 	 */
-	
+
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 		coleccion = PokemonCrud.getTodoPokemon();
@@ -164,9 +168,9 @@ public class CajaYEquipoController {
 		veloCja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("velocidad"));
 
 		coleccion = PokemonCrud.getTodoPokemonEquipo();
-		
+
 		tableview2.setItems(metodoEquipo());
-		
+
 		nombreEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nombre"));
 		nivelEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nivel"));
 		tipo1Equipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("tipo1"));
@@ -183,17 +187,17 @@ public class CajaYEquipoController {
 
 	}
 
-	
 	/**
 	 * Método para transferir a equipo
+	 * 
 	 * @param event
 	 */
-	
+
 	@FXML
 	public void transferirPokemonEquipo(ActionEvent event) {
 
 		System.out.println("Acabas de transferir tu pokemon a equipo");
-		
+
 		ObservableList<Pokemon> pokemonSeleccionado = tableview1.getSelectionModel().getSelectedItems();
 		Pokemon p = pokemonSeleccionado.get(0);
 		equipo.add(p);
@@ -209,14 +213,15 @@ public class CajaYEquipoController {
 
 	/**
 	 * Método para transferir a caja
+	 * 
 	 * @param event
 	 */
-	
+
 	@FXML
 	public void transferirPokemonCaja(ActionEvent event) {
-		
+
 		System.out.println("Acabas de transferir tu pokemon a caja");
-		
+
 		ObservableList<Pokemon> pokemonSeleccionadoEquipo = tableview2.getSelectionModel().getSelectedItems();
 		Pokemon p = pokemonSeleccionadoEquipo.get(0);
 		coleccion.add(p);

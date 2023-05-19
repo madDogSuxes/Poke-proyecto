@@ -35,7 +35,7 @@ public class Pokemon {
 
 	public Pokemon(int nivel, int idEntrenador, int idPokemon, int numPokedex, String nombre, String mote, int vitalidad, int ataque, int defensa, int atEsp, int defEsp,
 			int velocidad, String sexo2, int estamina, int fertilidad, String tipo12, String tipo22, int experiencia,
-			Estado estado, String imgDeFrente, String imgDeEspaldas) {
+			Estado estado, String imgDeFrente, String imgDeEspaldas, int equipo) {
 		super();
 		this.idEntrenador = idEntrenador;
 		this.idPokemon = idPokemon;
@@ -58,6 +58,7 @@ public class Pokemon {
 		this.estado = estado;
 		this.imgDeEspaldas = imgDeEspaldas;
 		this.imgDeFrente = imgDeFrente;
+		this.equipo = equipo;
 	}
 	
 	public int getNumPokedex() {
@@ -95,6 +96,7 @@ public class Pokemon {
 		this.estado = null;
 		this.imgDeEspaldas = "";
 		this.imgDeFrente = "";
+		this.equipo = 0;
 	}
 
 	public Pokemon(Pokemon c) {
@@ -118,6 +120,7 @@ public class Pokemon {
 		this.experiencia = c.experiencia;
 		this.imgDeEspaldas = c.imgDeEspaldas;
 		this.imgDeFrente = c.imgDeFrente;
+		this.equipo = c.equipo;
 	}
 
 	public int getNivel() {
@@ -278,6 +281,14 @@ public class Pokemon {
 
 	public void setImgDeEspaldas(String imgDeEspaldas) {
 		this.imgDeEspaldas = imgDeEspaldas;
+	}
+
+	public int getEquipo() {
+		return equipo;
+	}
+
+	public void setEquipo(int equipo) {
+		this.equipo = equipo;
 	}
 
 	/**

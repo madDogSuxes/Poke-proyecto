@@ -110,8 +110,8 @@ public class CapturaCrud {
 					+ ", " + vitalidad + ", " + ataque + ", " + defensa + ", " + atEsp + ", " + defEsp + ", "
 					+ velocidad + ", " + estamina + ", " + fertilidad + ", " + equipo + ")";
 			statement.executeUpdate(sql);
-
-			System.out.println("Pokémon capturado y guardado en la caja.");
+			
+			System.out.println("Pokemon capturado.");
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

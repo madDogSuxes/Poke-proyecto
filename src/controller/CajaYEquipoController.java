@@ -24,6 +24,7 @@ import pokemone.Pokemon;
 
 /**
  * Clase controller que almacena los pokemons en la caja y en el equipo
+ * 
  * @author Miguel y Jesús
  *
  */
@@ -38,55 +39,55 @@ public class CajaYEquipoController {
 	private TableView<Pokemon> tableview2;
 	@FXML
 	private TableColumn nombreCaja;
-	@FXML 
+	@FXML
 	private TableColumn nivelCaja;
-	@FXML 
+	@FXML
 	private TableColumn tipo1Caja;
-	@FXML 
+	@FXML
 	private TableColumn tipo2Caja;
-	@FXML 
+	@FXML
 	private TableColumn sexoCaja;
-	@FXML 
+	@FXML
 	private TableColumn vidaCaja;
-	@FXML 
+	@FXML
 	private TableColumn ataCaja;
-	@FXML 
+	@FXML
 	private TableColumn defCaja;
-	@FXML 
+	@FXML
 	private TableColumn ataEspeCaja;
-	@FXML 
+	@FXML
 	private TableColumn defEspeCaja;
-	@FXML 
+	@FXML
 	private TableColumn veloCja;
-	@FXML 
+	@FXML
 	private TableColumn estamCaja;
-	@FXML 
+	@FXML
 	private TableColumn fertCaja;
 	@FXML
 	private TableColumn nombreEquipo;
-	@FXML 
+	@FXML
 	private TableColumn nivelEquipo;
-	@FXML 
+	@FXML
 	private TableColumn tipo1Equipo;
-	@FXML 
+	@FXML
 	private TableColumn tipo2Equipo;
-	@FXML 
+	@FXML
 	private TableColumn sexoEquipo;
-	@FXML 
+	@FXML
 	private TableColumn vidaEquipo;
-	@FXML 
+	@FXML
 	private TableColumn ataEquipo;
-	@FXML 
+	@FXML
 	private TableColumn defEquipo;
-	@FXML 
+	@FXML
 	private TableColumn ataEspeEquipo;
-	@FXML 
+	@FXML
 	private TableColumn defEspeEquipo;
-	@FXML 
+	@FXML
 	private TableColumn veloEquipo;
-	@FXML 
+	@FXML
 	private TableColumn estaEquipo;
-	@FXML 
+	@FXML
 	private TableColumn fertEquipo;
 
 	private Parent root;
@@ -94,20 +95,34 @@ public class CajaYEquipoController {
 	private Scene scene;
 
 	static LinkedList<Pokemon> coleccion;
-	
+	static LinkedList<Pokemon> equipo;
+
 	/**
 	 * 
 	 * @return lista
 	 */
 
-	public ObservableList<Pokemon> metodo() {
+	public ObservableList<Pokemon> metodoColeccion() {
+
+		ObservableList<Pokemon> lista = FXCollections.observableArrayList();
+
+		for (int i = 0; i < coleccion.size(); i++) {
+
+			Pokemon p = coleccion.get(i);
+
+			lista.add(p);
+		}
+		return lista;
+	}
+
+	public ObservableList<Pokemon> metodoEquipo() {
 		
 		ObservableList<Pokemon> lista = FXCollections.observableArrayList();
-		
-		for(int i = 0; i < coleccion.size(); i++) {
-			
-			Pokemon p = coleccion.get(i);
-			
+
+		for (int i = 0; i < equipo.size(); i++) {
+
+			Pokemon p = equipo.get(i);
+
 			lista.add(p);
 		}
 		return lista;
@@ -115,10 +130,10 @@ public class CajaYEquipoController {
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
+
 		coleccion = PokemonCrud.getTodoPokemon();
 
-		tableview1.setItems(metodo());
+		tableview1.setItems(metodoColeccion());
 
 		nombreCaja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nombre"));
 		nivelCaja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nivel"));
@@ -133,9 +148,9 @@ public class CajaYEquipoController {
 		fertCaja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("fertilidad"));
 		estamCaja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("estamina"));
 		veloCja.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("velocidad"));
-		
-		coleccion=PokemonCrud.getTodoPokemonEquipo();
-		tableview2.setItems(metodo());
+
+		coleccion = PokemonCrud.getTodoPokemonEquipo();
+		tableview2.setItems(metodoEquipo());
 		nombreEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nombre"));
 		nivelEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nivel"));
 		tipo1Equipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("tipo1"));
@@ -149,15 +164,50 @@ public class CajaYEquipoController {
 		fertEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("fertilidad"));
 		estaEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("estamina"));
 		veloEquipo.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("velocidad"));
+
+	}
 	
+	@FXML
+	public void transferirAccionToEquipo(ActionEvent event) {
+		 
+		ObservableList<Pokemon> pokemonSeleccionado = tableview1.getSelectionModel().getSelectedItems();
+
+		Pokemon p = pokemonSeleccionado.get(0);
+
+		equipo.add(p);
+
+		coleccion.remove(p);
+
+		PokemonCrud.transferirPokemonEquipo(p.getNumPokedex());
+
+		tableview2.setItems(metodoEquipo());
+		tableview1.setItems(metodoColeccion());
+
+		System.out.println("Has cambiado tu Pokemon a Equipo");
+		
+	}
+	
+	@FXML
+	public void transferirAccionToCaja(ActionEvent event) {
+		ObservableList<Pokemon> pokemonSeleccionadoEquipo = tableview2.getSelectionModel().getSelectedItems();
+		Pokemon p = pokemonSeleccionadoEquipo.get(0);
+		coleccion.add(p);
+		equipo.remove(p);
+
+		PokemonCrud.transferirPokemonCaja(p.getNumPokedex());
+		tableview1.setItems(metodoColeccion());
+		tableview2.setItems(metodoEquipo());
+
+		System.out.println("El pokemon fue traspado a la Caja");
 	}
 	
 	/**
 	 * Método para volver al menú
+	 * 
 	 * @param event
 	 * @throws IOException
 	 */
-	
+
 	@FXML
 	public void volverAMenu(ActionEvent event) throws IOException {
 		try {

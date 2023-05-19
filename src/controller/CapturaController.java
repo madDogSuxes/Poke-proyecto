@@ -86,6 +86,7 @@ public class CapturaController {
 		txtMote.setVisible(false);
 		txtMote2.setVisible(false);
 		txtMote3.setVisible(false);
+		btnCapturar.setVisible(false);
 	}
 
 	/**
@@ -115,17 +116,6 @@ public class CapturaController {
 
 		if (probabilidadDeCaptura != 1) {
 			
-				CapturaCrud.capturarPokemon(14, p.getNumPokedex(), p.getMote(), "H", 1,
-						vitalidad = (int) (Math.random() * ((20 - 1) + 1)),
-						ataque = (int) (Math.random() * ((20 - 1) + 1)),
-						defensa = (int) (Math.random() * ((20 - 1) + 1)),
-						atEsp = (int) (Math.random() * ((20 - 1) + 1)),
-						defEsp = (int) (Math.random() * ((20 - 1) + 1)),
-						velocidad = (int) (Math.random() * ((20 - 1) + 1)),
-						estamina = (int) (Math.random() * ((20 - 1) + 1)),
-						fertilidad = (int) (Math.random() * ((20 - 1) + 1)), 
-						equipo = 2);
-			
 				String sql = "SELECT num_pokedex, nombre_pokemon, img_frente FROM pokedex ORDER BY RAND() LIMIT 1;";
 			
 				capturaRealizada = true;
@@ -139,6 +129,7 @@ public class CapturaController {
 				txtMote.setVisible(true);
 				txtMote2.setVisible(false);
 				txtMote3.setVisible(true);
+				btnCapturar.setVisible(false);
 
 				if (btnSi != null) {
 				txtMote2.setVisible(true);
@@ -181,6 +172,7 @@ public class CapturaController {
 		txtMote.setVisible(false);
 		txtMote2.setVisible(false);
 		txtMote3.setVisible(false);
+		btnCapturar.setVisible(true);
 
 	}
 
@@ -205,19 +197,67 @@ public class CapturaController {
 	}
 	
 	public void guardarMote(Event event) {
-		txtMote2.setText(null);
-		
+		txtMote2.setVisible(false);
+		btnAceptarMote.setVisible(false);
+		int idEntrenador = 0;
+		int idPokemon;
+		int numPokedex;
+		String mote;
+		String sexo; 
+		int nivel; 
+		int vitalidad;
+		int ataque;
+		int defensa;
+		int atEsp;
+		int defEsp;
+		int velocidad;
+		int estamina;
+		int fertilidad;
+		int equipo;
+		CapturaCrud.capturarPokemon(14, p.getNumPokedex(), txtMote2.getText(), "H", 1,
+				vitalidad = (int) (Math.random() * ((20 - 1) + 1)),
+				ataque = (int) (Math.random() * ((20 - 1) + 1)),
+				defensa = (int) (Math.random() * ((20 - 1) + 1)),
+				atEsp = (int) (Math.random() * ((20 - 1) + 1)),
+				defEsp = (int) (Math.random() * ((20 - 1) + 1)),
+				velocidad = (int) (Math.random() * ((20 - 1) + 1)),
+				estamina = (int) (Math.random() * ((20 - 1) + 1)),
+				fertilidad = (int) (Math.random() * ((20 - 1) + 1)), 
+				equipo = 2);
 	}
 
 	public void siPonerMote(Event event) {
 		txtMote2.setVisible(true);
 		btnAceptarMote.setVisible(true);
-		Pokemon.ponerMote();
 	}
 
 	public void noPonerMote(Event event) {
 		txtMote2.setVisible(false);
 		btnAceptarMote.setVisible(false);
-		Pokemon.noP0nerMote(null);
+		int idEntrenador = 0;
+		int idPokemon;
+		int numPokedex;
+		String mote;
+		String sexo; 
+		int nivel; 
+		int vitalidad;
+		int ataque;
+		int defensa;
+		int atEsp;
+		int defEsp;
+		int velocidad;
+		int estamina;
+		int fertilidad;
+		int equipo;
+		CapturaCrud.capturarPokemon(14, p.getNumPokedex(), p.getMote(), "H", 1,
+				vitalidad = (int) (Math.random() * ((20 - 1) + 1)),
+				ataque = (int) (Math.random() * ((20 - 1) + 1)),
+				defensa = (int) (Math.random() * ((20 - 1) + 1)),
+				atEsp = (int) (Math.random() * ((20 - 1) + 1)),
+				defEsp = (int) (Math.random() * ((20 - 1) + 1)),
+				velocidad = (int) (Math.random() * ((20 - 1) + 1)),
+				estamina = (int) (Math.random() * ((20 - 1) + 1)),
+				fertilidad = (int) (Math.random() * ((20 - 1) + 1)), 
+				equipo = 2);
 	}
 }

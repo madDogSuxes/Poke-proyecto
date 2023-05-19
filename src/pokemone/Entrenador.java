@@ -217,9 +217,10 @@ public class Entrenador extends Pokemon{
 		//Está en la clase combate
 	}
 	
+	boolean captura=false;
 	public void capturar() {
 		int probabilidadCaptura = (int)Math.floor(Math.random()*3+1);
-		boolean captura = false;
+		captura = false;
 		String moteNuevo;
 		boolean respuesta = false;
 		while(captura == false) {

@@ -175,12 +175,11 @@ public class Entrenador extends Pokemon{
 	public void setPokemonEnCaja(int pokemonEnCaja) {
 		this.pokemonEnCaja = pokemonEnCaja;
 	}
-
+	
+	boolean moverAPrincipal = false;
+	
 	public void moverAPrincipal() {
-		boolean seleccionarPokemon = false;
-		boolean moverAPrincipal = false;
-		int pokemonEnCaja = 0;
-		int pokemonEnPrincipal = 0;
+		 moverAPrincipal = false;
 		String respuesta;
 		if (seleccionarPokemon == true) {
 			System.out.println("¿Quieres mover este pokemon a principal?");

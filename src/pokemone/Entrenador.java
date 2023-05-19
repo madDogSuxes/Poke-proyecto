@@ -178,22 +178,36 @@ public class Entrenador extends Pokemon{
 			pokeDollarsG = 20*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
 			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
-			Pokemon.aumentarEstadisticas1(aumentarEstadisticas1(0));
+			int aumento= aumentarEstadisticas1(5);
+			int defensaM = defensa + aumento;
+			int defEspM = defEsp + aumento;
+			int vitalMejor = vitalidad + aumento;
 		}else if(opcion == 2) {
 			pokeDollarsG = 30*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
 			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
-			Pokemon.aumentarEstadisticas2(aumentarEstadisticas2(0));
+			int aumento= aumentarEstadisticas2(5);
+			int ataqueM = ataque + aumento;
+			int atEspM = atEsp + aumento;
+			int velocidadM = velocidad + aumento;
 		}else if(opcion == 3) {
 			pokeDollarsG = 40*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
 			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
-			Pokemon.aumentarEstadisticas3(aumentarEstadisticas3(0));
+			int aumento= aumentarEstadisticas3(5);
+			int velocidadM = velocidad + aumento;
+			int ataqueM = ataque + aumento;
+			int defensaM = defensa + aumento;
+			int vitalMejor = vitalidad + aumento;
 		}else if(opcion == 4) {
 			pokeDollarsG = 40*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
 			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
-			Pokemon.aumentarEstadisticas4(aumentarEstadisticas4(0));
+			int aumento= aumentarEstadisticas4(5);
+			int velocidadM = velocidad + aumento;
+			int atEspM = atEsp + aumento;
+			int defEspM = defEsp + aumento;
+			int vitalMejor = vitalidad + aumento;
 		}else {
 			System.out.println("Le has dado al 5 tio.");
 		}

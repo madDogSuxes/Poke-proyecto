@@ -106,7 +106,7 @@ public class CapturaCrud {
 			String sql = "INSERT INTO pokemon (id_entrenador, num_pokedex, mote, sexo, nivel, vitalidad, ataque, defensa, ata_especial, def_especial, velocidad, estamina, fertilidad, equipo)"
 					+ " VALUES (" + idEntrenador + ", " + numPokedex + ", '" + mote + "', '" + sexo + "', " + nivel
 					+ ", " + vitalidad + ", " + ataque + ", " + defensa + ", " + atEsp + ", "
-					+ defEsp + ", " + velocidad + ", " + estamina + ", " + fertilidad + ", " + equipo+ ")";
+					+ defEsp + ", " + velocidad + ", " + estamina + ", " + fertilidad + ", " + equipo + ")";
 			statement.executeUpdate(sql);
 
 			System.out.println("Pokémon capturado y guardado en la caja.");

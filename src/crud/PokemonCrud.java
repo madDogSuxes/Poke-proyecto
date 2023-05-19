@@ -56,8 +56,6 @@ public class PokemonCrud {
                 pokemon.setVelocidad(rs.getInt("c.velocidad"));
                 pokemon.setFertilidad(rs.getInt("c.fertilidad"));
 
-                System.out.println(pokemon);
-
                 coleccion.add(pokemon);
             }
 

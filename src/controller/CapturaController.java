@@ -13,6 +13,7 @@ import javafx.scene.text.Text;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.util.Random;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -90,9 +91,10 @@ public class CapturaController {
 
 	/**
 	 * Método que captura al pokemon y calcula la probabilidad de captura
+	 * 
 	 * @param event
 	 */
-	
+
 	@FXML
 	public void capturarPokemon(ActionEvent event) {
 
@@ -102,14 +104,14 @@ public class CapturaController {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
 		System.out.println(simpleDateFormat.format(d) + ".log");
 		Logger.write("Has lanzado una Pokeball a las: " + simpleDateFormat);
-		
+
 		int probabilidadDeCaptura = (int) (Math.random() * 3) + 1;
 		int idEntrenador = 0;
 		int idPokemon;
 		int numPokedex;
 		String mote;
-		String sexo; 
-		int nivel; 
+		String sexo;
+		int nivel;
 		int vitalidad;
 		int ataque;
 		int defensa;
@@ -124,28 +126,28 @@ public class CapturaController {
 
 			System.out.println(simpleDateFormat.format(d) + ".log");
 			Logger.write("Has capturado un Pokemon: " + simpleDateFormat);
-			
-				String sql = "SELECT num_pokedex, nombre_pokemon, img_frente FROM pokedex ORDER BY RAND() LIMIT 1;";
-			
-				capturaRealizada = true;
-				imgPokemonEncontrado.setVisible(false);
-				System.out.println("Has capturado un pokemon.");
-				pokeBall--;
-				imgPokeball.setVisible(true);
-				btnAceptarMote.setVisible(false);
-				btnSi.setVisible(true);
-				btnNo.setVisible(true);
-				txtMote.setVisible(true);
-				txtMote2.setVisible(false);
-				txtMote3.setVisible(true);
-				btnCapturar.setVisible(false);
 
-				if (btnSi != null) {
+			String sql = "SELECT num_pokedex, nombre_pokemon, img_frente FROM pokedex ORDER BY RAND() LIMIT 1;";
+
+			capturaRealizada = true;
+			imgPokemonEncontrado.setVisible(false);
+			System.out.println("Has capturado un pokemon.");
+			pokeBall--;
+			imgPokeball.setVisible(true);
+			btnAceptarMote.setVisible(false);
+			btnSi.setVisible(true);
+			btnNo.setVisible(true);
+			txtMote.setVisible(true);
+			txtMote2.setVisible(false);
+			txtMote3.setVisible(true);
+			btnCapturar.setVisible(false);
+
+			if (btnSi != null) {
 				txtMote2.setVisible(true);
 				btnAceptarMote.setVisible(true);
-				} else if (btnNo != null) {
-			
-				}
+			} else if (btnNo != null) {
+
+			}
 		} else {
 			System.out.println("No has capturado ningún pokemon. ¡Sigue buscando!");
 			btnSi.setVisible(false);
@@ -158,19 +160,20 @@ public class CapturaController {
 
 	/**
 	 * Método que busca al pokemon para ser capturado
+	 * 
 	 * @param event
 	 */
 
 	@FXML
 	public void buscarPokemon(ActionEvent event) {
-		
+
 		Date d = new Date();
 		System.out.println(d);
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
 		System.out.println(simpleDateFormat.format(d) + ".log");
 		Logger.write("Has buscado un Pokemon a: " + simpleDateFormat);
-	
+
 		boolean buscarPokemon = true;
 
 		p = CapturaCrud.buscarPokemon();
@@ -200,14 +203,14 @@ public class CapturaController {
 	 */
 
 	public void volverAMenu(Event event) throws IOException {
-		
+
 		Date d = new Date();
 		System.out.println(d);
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
 		System.out.println(simpleDateFormat.format(d) + ".log");
 		Logger.write("Has vuelto al menú: " + simpleDateFormat);
-		
+
 		try {
 			root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/vistas/MenuDeInicio.fxml")));
 			scene = new Scene(root, 600, 331);
@@ -219,24 +222,33 @@ public class CapturaController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void guardarMote(Event event) {
-		
+
 		Date d = new Date();
 		System.out.println(d);
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddHHmmssyyyy");
 		System.out.println(simpleDateFormat.format(d) + ".log");
 		Logger.write("Has guardado un mote a tu pokemon: " + simpleDateFormat);
-		
+
 		txtMote2.setVisible(false);
 		btnAceptarMote.setVisible(false);
+
+		Random random = new Random();
+		int numeroRandom = random.nextInt(2) + 1;
+
 		int idEntrenador = 0;
 		int idPokemon;
 		int numPokedex;
 		String mote;
-		String sexo; 
-		int nivel; 
+		String sexo;
+		if (numeroRandom == 1) {
+			sexo = "M";
+		} else {
+			sexo = "H";
+		}
+		int nivel;
 		int vitalidad;
 		int ataque;
 		int defensa;
@@ -246,15 +258,11 @@ public class CapturaController {
 		int estamina;
 		int fertilidad;
 		int equipo;
-		CapturaCrud.capturarPokemon(14, p.getNumPokedex(), txtMote2.getText(), "H", 1,
-				vitalidad = (int) (Math.random() * ((20 - 1) + 1)),
-				ataque = (int) (Math.random() * ((20 - 1) + 1)),
-				defensa = (int) (Math.random() * ((20 - 1) + 1)),
-				atEsp = (int) (Math.random() * ((20 - 1) + 1)),
-				defEsp = (int) (Math.random() * ((20 - 1) + 1)),
-				velocidad = (int) (Math.random() * ((20 - 1) + 1)),
-				estamina = (int) (Math.random() * ((20 - 1) + 1)),
-				fertilidad = (int) (Math.random() * ((20 - 1) + 1)), 
+		CapturaCrud.capturarPokemon(14, p.getNumPokedex(), txtMote2.getText(), sexo, 1,
+				vitalidad = (int) (Math.random() * ((20 - 1) + 1)), ataque = (int) (Math.random() * ((20 - 1) + 1)),
+				defensa = (int) (Math.random() * ((20 - 1) + 1)), atEsp = (int) (Math.random() * ((20 - 1) + 1)),
+				defEsp = (int) (Math.random() * ((20 - 1) + 1)), velocidad = (int) (Math.random() * ((20 - 1) + 1)),
+				estamina = (int) (Math.random() * ((20 - 1) + 1)), fertilidad = (int) (Math.random() * ((20 - 1) + 1)),
 				equipo = 2);
 	}
 
@@ -266,12 +274,21 @@ public class CapturaController {
 	public void noPonerMote(Event event) {
 		txtMote2.setVisible(false);
 		btnAceptarMote.setVisible(false);
+
+		Random random = new Random();
+		int numeroRandom = random.nextInt(2) + 1;
+
 		int idEntrenador = 0;
 		int idPokemon;
 		int numPokedex;
 		String mote;
-		String sexo; 
-		int nivel; 
+		String sexo;
+		if (numeroRandom == 1) {
+			sexo = "M";
+		} else {
+			sexo = "H";
+		}
+		int nivel;
 		int vitalidad;
 		int ataque;
 		int defensa;
@@ -281,15 +298,11 @@ public class CapturaController {
 		int estamina;
 		int fertilidad;
 		int equipo;
-		CapturaCrud.capturarPokemon(14, p.getNumPokedex(), p.getMote(), "H", 1,
-				vitalidad = (int) (Math.random() * ((20 - 1) + 1)),
-				ataque = (int) (Math.random() * ((20 - 1) + 1)),
-				defensa = (int) (Math.random() * ((20 - 1) + 1)),
-				atEsp = (int) (Math.random() * ((20 - 1) + 1)),
-				defEsp = (int) (Math.random() * ((20 - 1) + 1)),
-				velocidad = (int) (Math.random() * ((20 - 1) + 1)),
-				estamina = (int) (Math.random() * ((20 - 1) + 1)),
-				fertilidad = (int) (Math.random() * ((20 - 1) + 1)), 
+		CapturaCrud.capturarPokemon(14, p.getNumPokedex(), p.getMote(), sexo, 1,
+				vitalidad = (int) (Math.random() * ((20 - 1) + 1)), ataque = (int) (Math.random() * ((20 - 1) + 1)),
+				defensa = (int) (Math.random() * ((20 - 1) + 1)), atEsp = (int) (Math.random() * ((20 - 1) + 1)),
+				defEsp = (int) (Math.random() * ((20 - 1) + 1)), velocidad = (int) (Math.random() * ((20 - 1) + 1)),
+				estamina = (int) (Math.random() * ((20 - 1) + 1)), fertilidad = (int) (Math.random() * ((20 - 1) + 1)),
 				equipo = 2);
 	}
 }

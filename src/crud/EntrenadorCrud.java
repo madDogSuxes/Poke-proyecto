@@ -66,6 +66,7 @@ public class EntrenadorCrud {
 	}
 
 	/**
+	 * Método que comprueba los datos para hacer el log-in
 	 * @param nombre
 	 * @param contraseña
 	 */

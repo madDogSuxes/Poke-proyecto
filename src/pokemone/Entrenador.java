@@ -3,15 +3,7 @@ package pokemone;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-/**
- * Clase entrenador con sus constructores que nos ayuda a entender la lógica del
- * programa antes de sus interfaces
- * 
- * @author Miguel y Jesús
- *
- */
-
-public class Entrenador extends Pokemon {
+public class Entrenador extends Pokemon{
 	Scanner sc = new Scanner(System.in);
 	protected int idEntrenador;
 	protected String nombre;
@@ -21,7 +13,7 @@ public class Entrenador extends Pokemon {
 	LinkedList<String> listaEquipo = new LinkedList<String>();
 	LinkedList<String> listaEquipo2 = new LinkedList<String>();
 	LinkedList<String> listaCaja = new LinkedList<String>();
-
+	
 	public Entrenador() {
 		this.idEntrenador = 0;
 		this.nombre = "";
@@ -32,9 +24,12 @@ public class Entrenador extends Pokemon {
 		this.listaEquipo2 = new LinkedList<String>();
 		this.listaCaja = new LinkedList<String>();
 	}
-
-	public Entrenador(int idEntrenador, String nombre, int pokeDollars, LinkedList<String> listaObjetos,
-			LinkedList<String> listaEquipo, LinkedList<String> listaEquipo2, LinkedList<String> listaCaja) {
+	
+	public Entrenador(int idEntrenador, String nombre, int pokeDollars,
+					  LinkedList<String> listaObjetos, 
+					  LinkedList<String> listaEquipo,
+					  LinkedList<String> listaEquipo2, 
+					  LinkedList<String> listaCaja) {
 		this.idEntrenador = 0001;
 		this.nombre = "";
 		this.pokeDollars = 0;
@@ -44,7 +39,7 @@ public class Entrenador extends Pokemon {
 		this.listaEquipo2 = new LinkedList<String>();
 		this.listaCaja = new LinkedList<String>();
 	}
-
+	
 	public Entrenador(Entrenador c) {
 		this.idEntrenador = c.idEntrenador;
 		this.nombre = c.nombre;
@@ -123,14 +118,9 @@ public class Entrenador extends Pokemon {
 	public String toString() {
 		return "Entrenador [idEntrenador=" + idEntrenador + ", nombre=" + nombre + ", pokeDollars=" + pokeDollars
 				+ ", listaObjetos=" + listaObjetos + ", listaEquipo=" + listaEquipo + ", listaEquipo2=" + listaEquipo2
-				+ ", listaCaja=" + listaCaja + ", pokeBalls= " + pokeBalls + "]";
+				+ ", listaCaja=" + listaCaja + ", pokeBalls= "+ pokeBalls + "]";
 	}
-
-	/**
-	 * Método que ayuda a mver a la caja un pokemon que tenemos seleccionado. Método
-	 * moverACaja
-	 */
-
+	
 	public void moverACaja() {
 		boolean seleccionarPokemon = false;
 		boolean moverACaja = false;
@@ -141,22 +131,17 @@ public class Entrenador extends Pokemon {
 			System.out.println("¿Quieres mover este pokemon a la caja?");
 			respuesta = sc.next();
 			respuesta.toUpperCase();
-			if (respuesta == "SI") {
+			if(respuesta == "SI") {
 				moverACaja = true;
-				pokemonEnCaja = +1;
+				pokemonEnCaja =+ 1;
 				pokemonEnPrincipal -= 1;
-			} else if (respuesta == "NO") {
+			}else if(respuesta == "NO"){
 				moverACaja = false;
 				seleccionarPokemon = false;
 			}
 		}
 	}
-
-	/**
-	 * Método que nos ayuda mover a principal algun pokemon que haya en la caja
-	 * Método mover a principal
-	 */
-
+	
 	public void moverAPrincipal() {
 		boolean seleccionarPokemon = false;
 		boolean moverAPrincipal = false;
@@ -167,25 +152,21 @@ public class Entrenador extends Pokemon {
 			System.out.println("¿Quieres mover este pokemon a principal?");
 			respuesta = sc.next();
 			respuesta.toUpperCase();
-			if (respuesta == "SI") {
+			if(respuesta == "SI") {
 				moverAPrincipal = true;
 				pokemonEnPrincipal += 1;
 				pokemonEnCaja -= 1;
-			} else if (respuesta == "NO") {
+			}else if(respuesta == "NO"){
 				moverAPrincipal = false;
 				seleccionarPokemon = false;
 			}
 		}
 	}
-
-	/**
-	 * Método que nos ayuda a entrenar los Pokemon Método entrenar
-	 */
-
+	
 	public void entrenar() {
 		boolean entrenar = true;
 		byte opcion;
-		int pokeDollars = (int) Math.floor(Math.random() * 1000 + 800);
+		int pokeDollars = (int)Math.floor(Math.random()*1000+800);
 		int pokeDollarsG;
 		System.out.println("¿Que tipo de entrenamiento quieres hacer?");
 		System.out.println("1. Entrenamiento pesado");
@@ -193,84 +174,73 @@ public class Entrenador extends Pokemon {
 		System.out.println("3. Entrenamiento funcional");
 		System.out.println("4. Entrenamiento onirico");
 		opcion = sc.nextByte();
-		if (opcion == 1) {
-			pokeDollarsG = 20 * getNivel();
+		if(opcion == 1) {
+			pokeDollarsG = 20*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
-			System.out.println("Te quedan: " + pokeDollars + " pokeDollars.");
-			Pokemon.aumentarEstadisticas1(aumentarEstadisticas1(0));
-		} else if (opcion == 2) {
-			pokeDollarsG = 30 * getNivel();
+			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
+			int aumento= aumentarEstadisticas1(5);
+			int defensaM = defensa + aumento;
+			int defEspM = defEsp + aumento;
+			int vitalMejor = vitalidad + aumento;
+		}else if(opcion == 2) {
+			pokeDollarsG = 30*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
-			System.out.println("Te quedan: " + pokeDollars + " pokeDollars.");
-			Pokemon.aumentarEstadisticas2(aumentarEstadisticas2(0));
-		} else if (opcion == 3) {
-			pokeDollarsG = 40 * getNivel();
+			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
+			int aumento= aumentarEstadisticas2(5);
+			int ataqueM = ataque + aumento;
+			int atEspM = atEsp + aumento;
+			int velocidadM = velocidad + aumento;
+		}else if(opcion == 3) {
+			pokeDollarsG = 40*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
-			System.out.println("Te quedan: " + pokeDollars + " pokeDollars.");
-			Pokemon.aumentarEstadisticas3(aumentarEstadisticas3(0));
-		} else if (opcion == 4) {
-			pokeDollarsG = 40 * getNivel();
+			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
+			int aumento= aumentarEstadisticas3(5);
+			int velocidadM = velocidad + aumento;
+			int ataqueM = ataque + aumento;
+			int defensaM = defensa + aumento;
+			int vitalMejor = vitalidad + aumento;
+		}else if(opcion == 4) {
+			pokeDollarsG = 40*getNivel();
 			pokeDollars = pokeDollars - pokeDollarsG;
-			System.out.println("Te quedan: " + pokeDollars + " pokeDollars.");
-			Pokemon.aumentarEstadisticas4(aumentarEstadisticas4(0));
-		} else {
+			System.out.println("Te quedan: "+pokeDollars+" pokeDollars.");
+			int aumento= aumentarEstadisticas4(5);
+			int velocidadM = velocidad + aumento;
+			int atEspM = atEsp + aumento;
+			int defEspM = defEsp + aumento;
+			int vitalMejor = vitalidad + aumento;
+		}else {
 			System.out.println("Le has dado al 5 tio.");
 		}
 	}
-
-	/**
-	 * Método para combatir, lógica del programa Método en la clase combate
-	 */
-
+	
 	public void combatir() {
-		// Está en la clase combate
+		//Está en la clase combate
 	}
-
-	/**
-	 * Gracias a este método entendemos la lógica del programa. Método para capturar
-	 * pokemons
-	 */
-
+	
 	public void capturar() {
-		int probabilidadCaptura = (int) Math.floor(Math.random() * 3 + 1);
+		int probabilidadCaptura = (int)Math.floor(Math.random()*3+1);
 		boolean captura = false;
 		String moteNuevo;
 		boolean respuesta = false;
-		while (captura == false) {
-			if ((probabilidadCaptura == 1) || (probabilidadCaptura == 2)) {
-				captura = true;
-				System.out.println("Has capturado un pokemon, ¿quieres ponerle un mote?");
-				if (respuesta == true) {
-					moteNuevo = sc.nextLine();
-					setMote(moteNuevo);
-					setNivel(nivel);
-				}
-			} else {
-				captura = false;
-				System.out.println("No has capturado ningun pokemon, pierdes una pokeball");
-				pokeBalls -= 1;
+		while(captura == false) {
+		if ((probabilidadCaptura == 1)||(probabilidadCaptura == 2)) {
+			captura = true;
+			System.out.println("Has capturado un pokemon, ¿quieres ponerle un mote?");
+			if(respuesta == true) {
+				moteNuevo = sc.nextLine();
+				setMote(moteNuevo);
+				setNivel(nivel);
+			}
+		}else {
+			captura = false;
+			System.out.println("No has capturado ningun pokemon, pierdes una pokeball");
+			pokeBalls -= 1;
 			}
 		}
 	}
-
-	/**
-	 * Método para entender la lógica del programa
-	 * Método poner a Criar
-	 */
 	
 	public void ponerACriar() {
-		boolean pokemon1Seleccionado = true;
-		boolean pokemon2Seleccionado = true;
-		boolean crianzaExitosa = true;
-		String sexo = "macho";
-		String sexo2 = "hembra";
-
-		if ((pokemon1Seleccionado && sexo.equals("macho")) && (pokemon2Seleccionado && sexo2.equals("hembra"))) {
-			crianzaExitosa = true;
-		}else if ((pokemon1Seleccionado && sexo.equals("hembra") && pokemon2Seleccionado && sexo2.equals("macho"))) {
-			crianzaExitosa = true;
-		}else {
-			crianzaExitosa = false;
-		}
+		//Basarse en los objetos una vez creado con todo el JAVAFX.
 	}
 }
+

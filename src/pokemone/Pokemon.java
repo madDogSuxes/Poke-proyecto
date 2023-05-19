@@ -2,6 +2,12 @@ package pokemone;
 
 import java.util.LinkedList;
 
+/**
+ * Clase Pokemon con sus constructores y sus getter and setter
+ * @author Miguel y Jesús
+ *
+ */
+
 public class Pokemon {
 	protected int nivel;
 	protected int idEntrenador;
@@ -274,6 +280,11 @@ public class Pokemon {
 		this.imgDeEspaldas = imgDeEspaldas;
 	}
 
+	/**
+	 * Método para que el pokemon suba de nivel cada vez que cumpla X requisitos
+	 * Método de subir nivel
+	 */
+	
 	public void subirNivel() {
 		if (10 * nivel == experiencia) {
 			nivel++;
@@ -288,14 +299,32 @@ public class Pokemon {
 
 	}
 	
+	/**
+	 * Método poner mote
+	 */
+	
 	public static void ponerMote() {
 		String mote;
 	}
 	
+	/**
+	 * Método no poner mote
+	 * @param nombre
+	 */
+	
 	public static void noP0nerMote(String nombre) {
 		setMote(nombre);
 	}
-
+	
+	/**
+	 * Método para el aumento de estadísticas
+	 * @param aumentoDeEstadisticas1
+	 * @param aumentoDeEstadisticas2
+	 * @param aumentoDeEstadisticas3
+	 * @param aumentoDeEstadisticas4
+	 * @return
+	 */
+	
 	public static int aumentarEstadisticas1(int aumentoDeEstadisticas1) {
 		return aumentoDeEstadisticas1;
 	}
@@ -312,6 +341,14 @@ public class Pokemon {
 		return aumentoDeEstadisticas4;
 	}
 
+	/**
+	 * Método ventaja
+	 * @param tipo1
+	 * @param tipo2
+	 * @param ataque
+	 * @return
+	 */
+	
 	public int ventaja(Tipo tipo1, Tipo tipo2, Ataque ataque) {
 
 		Tipo tipoRival = null;
@@ -562,8 +599,11 @@ public class Pokemon {
 
 	}
 	
+	/**
+	 * Método poner a criar
+	 */
+	
 	public void ponerAcriar() {
-		//Primero vamos a sacar el mote de la madre y el del padre (si es que tiene)
 		
 		String moteMadre=getMote();
 		

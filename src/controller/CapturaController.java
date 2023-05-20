@@ -258,7 +258,7 @@ public class CapturaController {
 		int estamina;
 		int fertilidad;
 		int equipo;
-		CapturaCrud.capturarPokemon(14, p.getNumPokedex(), txtMote2.getText(), sexo, 1,
+		CapturaCrud.capturarPokemon(1, p.getNumPokedex(), txtMote2.getText(), sexo, 1,
 				vitalidad = (int) (Math.random() * ((20 - 1) + 1)), ataque = (int) (Math.random() * ((20 - 1) + 1)),
 				defensa = (int) (Math.random() * ((20 - 1) + 1)), atEsp = (int) (Math.random() * ((20 - 1) + 1)),
 				defEsp = (int) (Math.random() * ((20 - 1) + 1)), velocidad = (int) (Math.random() * ((20 - 1) + 1)),

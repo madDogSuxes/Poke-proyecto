@@ -617,7 +617,6 @@ public class Pokemon {
 	public void ponerAcriar() {
 		
 		String moteMadre=getMote();
-		
 		String motePadre=getMote();
 		
 		int mitadMadre=moteMadre.length()/2;

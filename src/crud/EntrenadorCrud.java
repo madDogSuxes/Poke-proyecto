@@ -9,6 +9,7 @@ import java.sql.Statement;
 
 /**
  * Clase crud que ayuda a iniciar sesión y a completar el registro
+ * 
  * @author Miguel y Jesus
  */
 
@@ -17,7 +18,7 @@ public class EntrenadorCrud {
 	private int pokeDollar;
 
 	private static boolean cambioDeVentana;
-	
+
 	/**
 	 * @param nombre
 	 * @param contraseña
@@ -67,10 +68,11 @@ public class EntrenadorCrud {
 
 	/**
 	 * Método que comprueba los datos para hacer el log-in
+	 * 
 	 * @param nombre
 	 * @param contraseña
 	 */
-	
+
 	public static void comprobarDatos(String nombre, String contraseña) {
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -120,9 +122,11 @@ public class EntrenadorCrud {
 			}
 		}
 	}
-	
+
 	/**
-	 * Métodos que ayudan a obtener el cambio de ventana una vez comprobado el registro y a actualizar Pokedollars
+	 * Métodos que ayudan a obtener el cambio de ventana una vez comprobado el
+	 * registro y a actualizar Pokedollars
+	 * 
 	 * @return pokeDollar & cambioDeVentana
 	 */
 
